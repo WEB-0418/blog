@@ -1,0 +1,27 @@
+DB structure
+
+	news
+		- id
+		- title
+		- content
+		- img
+		- slug
+		- created_at
+		- updated_at
+
+	news_categories
+		- id
+		- name
+		- slug
+
+	news_news_categories
+		- id
+		- news_id
+		- category_id
+
+
+
+https://www.youtube.com/watch?v=3uYXAcit_Sg&list=PL3VM-unCzF8iPERY07XRw0JXG_c50CapR
+
+
+
