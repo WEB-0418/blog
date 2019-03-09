@@ -25,6 +25,6 @@ class NewsCategorySeeder extends Seeder
 
      //    DB::table('news_categories')->insert($categories);
 
-    	factory(NewsCategory::class, 5000)->create();
+    	factory(NewsCategory::class, 20)->create();
     }
 }

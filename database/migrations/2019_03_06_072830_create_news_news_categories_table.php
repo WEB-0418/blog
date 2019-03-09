@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNewsCategoriesTable extends Migration
+class CreateNewsNewsCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,19 @@ class CreateNewsCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('news_categories', function (Blueprint $table) {
+        Schema::create('news_news_categories', function (Blueprint $table) {
 
             $table->engine = 'InnoDB';
             $table->charset = 'utf8';
             $table->collation = 'utf8_unicode_ci';
 
             $table->bigIncrements('id');
-            $table->string('name')->unique(); // не бывает повторяющихся категорий
-            $table->string('slug');
+            $table->unsignedBigInteger('news_id');  
+                //->after('category_id')  не работает,
+                // применяется только при модифицируей миграции 
+            $table->unsignedBigInteger('category_id')->index();
+            // или $table->index('category_id');
+
             $table->timestamps();
         });
     }
@@ -33,6 +37,6 @@ class CreateNewsCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news_categories');
+        Schema::dropIfExists('news_news_categories');
     }
 }

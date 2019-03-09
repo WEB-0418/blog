@@ -8,6 +8,7 @@ DB structure
 		- slug
 		- created_at
 		- updated_at
+		- author_id
 
 	news_categories
 		- id
@@ -19,6 +20,9 @@ DB structure
 		- news_id
 		- category_id
 
+	author
+		- id
+		- name
 
 
 https://www.youtube.com/watch?v=3uYXAcit_Sg&list=PL3VM-unCzF8iPERY07XRw0JXG_c50CapR
