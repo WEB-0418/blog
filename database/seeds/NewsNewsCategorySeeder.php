@@ -12,6 +12,11 @@ class NewsNewsCategorySeeder extends Seeder
      */
     public function run()
     {
-        factory(NewsNewsCategory::class, 20)->create();
+        // factory(NewsNewsCategory::class, 20)->create();
+
+
+
+
+        
     }
 }

@@ -1,0 +1,2576 @@
+body
+  color: #fff
+  font-family: 'HelveticaNeueCyr'
+
+  & *
+    margin: 0
+    padding: 0
+    border: 0
+    outline: 0
+    background-color: transparent
+    box-sizing: border-box
+
+a
+  text-decoration: none
+  transition: .3s
+  color: inherit
+
+ul
+  list-style: none
+
+button
+  cursor: pointer
+
+.slideIn
+  animation: slideIn 6s
+
+.slideOut
+  animation: slideOut 6s
+
+select, input
+  appearance: none
+  border-radius: 0px
+  background-color: transparent
+
+.content-wrapper
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+
+.page-wrapper
+  flex: 1 1
+
+.footer-wrapper
+  flex: 0 1
+
+.box
+  width: 100%
+  max-width: 1170px
+  padding: 0 15px
+  display: flex
+  margin: 0 auto
+  flex-wrap: wrap
+
+.btn
+  padding: 0 28px
+  height: 38px
+  line-height: 38px
+  display: inline-block
+  background-color: #1a1a1a
+  border: 1px solid #1a1a1a
+  transition: .3s
+  color: #ffffff
+
+  &:hover
+    background-color: #ffffff
+    color: #000000
+
+.btn_white
+  background-color: #ffffff
+  color: #1a1a1a
+  border: 1px solid transparent
+
+  &:hover
+    background-color: #1a1a1a
+    color: #ffffff
+
+.btn_border
+  border: 1px solid #1a1a1a
+
+
+.header
+  background-color: #000000
+  color: #a6a6a6
+
+  & .box
+    height: 47px
+
+.header-index
+  height: 287px
+  margin-bottom: -240px
+
+
+.header-soc__item
+  width: 20px
+  height: 20px
+  background-repeat: no-repeat
+  background-position: center
+  transition: .3s
+
+  &:hover
+    color: #ffffff
+
+.header-soc__item_phone
+  width: auto
+  height: auto
+
+.header__header-soc
+  display: flex
+  align-items: center
+
+  & > :not(:last-child)
+    margin-right: 5px
+
+.header-soc__item_fb
+  background-image: url("/img/facebook.png")
+
+.header-soc__item_inst
+  background-image: url("/img/instagram.png")
+
+.header__logo
+  display: block
+  position: relative
+  z-index: 5
+
+  & img
+    max-width: 100%
+
+.header__header-3part
+  width: 33.333333333%
+  display: flex
+  align-items: center
+
+.header__header-left
+  justify-content: flex-start
+
+.header__header-center
+  justify-content: center
+  align-items: flex-start
+
+.main-news
+  color: #333333
+  padding: 40px 0
+
+  &__slider
+
+    & .tovar-item
+      max-width: none
+
+  &__title
+    font-size: 20px
+    color: #000000
+    margin: 0 auto 25px
+    font-weight: bold
+
+.header__header-right
+  justify-content: flex-end
+
+.login-block
+
+  & > :not(:last-child)
+    border-right: 1px solid rgba(112, 112, 112, .6)
+
+.login-block__links
+  padding: 0 4px
+  transition: .3s
+
+  &:hover
+    color: #ffffff
+
+.header__search-cart, .search-cart__search
+  display: flex
+
+.search-cart__search
+  position: relative
+  margin-left: 20px
+  height: 100%
+
+.search-cart__cart
+  margin-left: 20px
+
+  &:hover
+    color: #ffffff
+
+.search-cart__btn
+  color: #a6a6a6
+  transition: .3s
+
+  & .fas
+    margin-top: 3px
+
+  &:hover
+    color: #ffffff
+
+.search-cart__input
+  width: 0
+  transform: translate(-100%, -50%)
+  position: absolute
+  left: 0
+  top: 50%
+  z-index: 2
+  max-width: 90vw
+  background-color: #ffffff
+
+.search-padding
+  padding: 10px
+
+.banner
+  background-size: cover
+  padding: 140px
+  width: 100%
+
+.banner-title
+  font-size: 13px
+  margin-bottom: 18px
+  letter-spacing: 5.2px
+
+.banner-link
+  display: inline-flex
+  align-items: center
+
+  & i
+    margin-left: 10px
+
+.banner-desc
+  font-size: 39px
+  line-height: 1.15
+  letter-spacing: 2px
+  margin-bottom: 44px
+
+.main-nav
+  width: 100%
+  font-size: 13px
+  display: flex
+  justify-content: space-between
+  z-index: 3
+  background-color: #2d2d2d
+
+.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
+  background-color: #ffffff
+
+.hamburger
+  display: none
+
+.main-nav__catalog-cub
+  width: 6px
+  height: 6px
+  background-color: #ffffff
+  position: absolute
+  left: 12px
+  top: 50%
+  transform: translateY(-50%)
+
+  &::after
+    content: ""
+    position: absolute
+    width: 6px
+    height: 6px
+    background-color: #ffffff
+    top: -12px
+    left: 0
+
+  &::before
+    content: ""
+    position: absolute
+    width: 6px
+    height: 6px
+    background-color: #ffffff
+    bottom: -12px
+    left: 0
+
+.main-sect__slider
+  width: 100%
+  background-color: #000000
+
+  & .slick-dots
+    position: absolute
+    bottom: 25px
+    display: flex
+    justify-content: center
+    width: 100%
+    
+    & li
+      width: 10px
+      height: 10px
+      border-radius: 50%
+      background-color: #000000
+      border: 1.5px solid #000000
+      box-shadow: 0 0 0 1px #ffffff
+      margin: 0 5px
+      display: flex
+
+      & button
+        font-size: 0
+
+    & .slick-active
+      background-color: #ff0000
+
+
+.main-nav__catalog
+  position: relative
+  min-width: 190px
+  padding: 19px 0 15px
+  text-align: center
+  background-color: #353535
+  display: flex
+  align-items: center
+  justify-content: center
+
+  &:hover
+    background-color: #ff3333
+
+    & .main-nav__submenu_general
+     display: block
+
+.mm-listview
+  margin: 0!important
+
+.mm-panel_has-navbar
+  padding-top: 70px
+
+.mm-navbar > *
+  padding: 0
+
+.mm-navbar
+  border: 0
+
+.mm-panels
+  text-align: center
+
+.mobile-menu__item
+  font-size: 20px
+
+.mobile-menu__enter, .mobile-menu__reg
+  font-size: 18px
+  padding: 0 10px!important
+  background-color: transparent
+
+.mobile-menu__login
+  display: none
+  margin: 30px 0
+  justify-content: center
+
+  & > :not(:last-child)
+    border-right: 1px solid #707070
+
+.main-nav__submenu-item
+  position: relative
+  padding: 0 10px
+  background-color: #323232
+  font-weight: bold
+  color: #d8d8d8
+  letter-spacing: 1.3px
+  height: 50px
+  line-height: 50px
+  transition: .3s
+
+  &:hover
+    background-color: #ff3333
+
+  &:hover .main-nav__submenu
+    display: block
+
+.main-nav__submenu.main-nav__submenu_general
+  top: auto
+  left: 0
+  bottom: 0
+  transform: translate(0, 100%)
+
+.main-nav__submenu
+  position: absolute
+  top: 0
+  right: 1px
+  transform: translateX(100%)
+  display: none
+  z-index: 2
+
+  & > :not(:last-child)
+    border-bottom: 1px dashed #ff3333
+
+.owl-dots
+  position: absolute
+  bottom: 25px
+  display: flex
+  justify-content: center
+  width: 100%
+
+.owl-dot
+  width: 10px
+  height: 10px
+  border-radius: 50%
+  background-color: #000000!important
+  border: 1.5px solid #000000!important
+  box-shadow: 0 0 0 1px #ffffff
+  margin: 0 5px
+
+.owl-dot.active
+  background-color: #ff0000!important
+
+.main-nav__submenu-link
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+.main-nav__nav
+  display: flex
+  flex-grow: 1
+  background-color: #2d2d2d
+  padding: 0 30px
+
+.main-nav__nav-item
+  display: flex
+  flex-grow: 1
+
+.main-nav__nav-link
+  padding: 19px 0 15px
+  width: 100%
+  text-align: center
+
+  &:hover
+    color: #ff3333
+
+.grid
+  min-width: 100%
+  flex-grow: 1
+  margin: 60px -7.5px 0
+
+.grid__sizer
+  width: 25%
+
+.grid__item
+  display: flex
+  width: 25%
+  height: 240px
+  margin-bottom: 15px
+  padding: 0 7.5px
+
+.grid__height2
+  height: 495px
+
+.grid__width2
+  width: 50%
+
+.grid__item-inner
+  width: 100%
+  background-size: cover
+  display: flex
+  align-items: flex-end
+  font-size: 30px
+  font-weight: bold
+  padding: 50px 40px
+  line-height: 1.2
+  position: relative
+  cursor: pointer
+
+  &:hover
+
+    &::after
+      background-color: rgba(41, 41, 41, .6)
+
+  &::after
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-color: rgba(41, 41, 41, .8)
+    transition: .3s
+
+.grid__item-desc
+  max-width: 185px
+  position: relative
+  z-index: 2
+
+.advanteges
+  background-color: #292929
+  padding: 60px 0 40px
+
+.advanteges__block-outer
+  overflow: hidden
+
+.advanteges__block
+  display: flex
+  flex-wrap: wrap
+  color: #fff
+  margin: -1px
+
+.delete-btn
+  padding:  15px
+  width: 100%
+  text-align: center
+  color: #ffffff
+  background-color: #ff0000
+  cursor: pointer
+  margin-top: 15px
+  font-weight: bold
+.advanteges__item
+  width: 25%
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  padding: 15px 55px
+  border: 0.3px solid rgba(167, 166, 167, .36)
+  text-align: center
+  min-height: 175px
+
+.advanteges__number
+  font-size: 42px
+  margin-bottom: 5px
+
+.advanteges__desc
+  line-height: 1.2
+  font-size: 24px
+
+.main-about__title
+  font-size: 20px
+  color: #000000
+  margin: 0 auto 25px
+  font-weight: bold
+
+.main-about
+  padding: 80px 0 60px
+
+.main-about__item
+  width: 50%
+  padding: 0 15px
+  font-size: 15px
+  line-height: 18px
+  color: #707070
+  margin-bottom: 50px
+
+.main-about__block
+  display: flex
+  flex-wrap: wrap
+  min-width: 100%
+  margin: 0 -15px
+
+.main-about__item-title
+  font-size: 17px
+  line-height: 1.18
+  color: #333333
+  font-weight: bold
+  margin-bottom: 15px
+
+.footer-col
+  width: 20%
+
+.footer-col__soc
+  margin-top: 5px
+
+.footer-col__soc-item
+
+  &:hover
+    color: #ffffff
+
+.footer-col__title
+  color: rgba(255, 255, 255, .82)
+  font-size: 15px
+  letter-spacing: 3.4px
+  margin-bottom: 20px
+
+.footer-col__list-item
+  margin-bottom: 10px
+  font-size: 13px
+  color: #d8d8d8
+  max-width: 155px
+  line-height: 1.38
+
+  & a
+
+    &:hover
+      color: #ff3333
+
+.footer-col__list-img
+  background-position: top left
+  background-repeat: no-repeat
+
+  & .footer-col__list-item
+    margin-bottom: 4px
+    padding-left: 30px
+
+.footer-col__title-soc
+  color: rgba(255, 255, 255, .82)
+  font-size: 15px
+  letter-spacing: 3.4px
+  margin-bottom: 10px
+
+footer
+  background-color: #292929
+  padding-top: 40px
+  position: relative
+
+.footer-anchor
+  position: fixed
+  width: 45px
+  height: 45px
+  display: flex
+  justify-content: center
+  align-items: center
+  font-size: 25px
+  color: #ffffff
+  background-color: #000000
+  bottom: 10px
+  right: 60px
+  z-index: 3
+
+.footer-col__soc-item
+  width: 20px
+  height: 20px
+  display: inline-block
+  background-position: center
+  background-repeat: no-repeat
+
+.footer-col__fb
+  background-image: url("/img/facebook.png")
+
+.footer-col__inst
+  background-image: url("/img/instagram.png")
+
+.footer-logo-row
+  display: flex
+  justify-content: center
+  background-color: #585858
+  height: 52px
+  position: relative
+  margin-top: 60px
+
+.footer-logo-link
+  position: absolute
+  bottom: 0
+  left: 50%
+  transform: translateX(-50%)
+  display: flex
+
+.modal-form
+  width: 362px
+  background-color: #ffffff
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16)
+  padding: 25px
+  color: #292929
+  display: none
+
+.modal-form__input, .basket__input
+  min-width: 230px
+  height: 35px
+  border: solid 1px #080607
+  padding: 5px 10px
+
+.modal-form__star-block
+  display: flex
+  margin-left: auto
+  min-width: 230px
+  align-items: center
+
+.modal-form__textarea
+  min-height: 100px
+  resize: none
+
+.modal-form__star-title
+  font-size: 9px
+  color: #575757
+  margin-left: 5px
+
+.modal-form__row
+  display: flex
+
+.review-form__btn-wrapper
+  max-width: 230px
+  margin-left: auto
+  display: flex
+
+.modal-form__star
+  width: 15px
+  height: 15px
+  background-image: url('/img/star-yellow.svg')
+  margin-right: 5px
+  cursor: pointer
+  transition: .5s
+
+.modal-form__row_1
+
+  & > :nth-child(1n + 2)
+    background-image: url('/img/star-grey.svg')
+
+.modal-form__row_2
+
+  & > :nth-child(1n + 3)
+    background-image: url('/img/star-grey.svg')
+
+.modal-form__row_3
+
+  & > :nth-child(1n + 4)
+    background-image: url('/img/star-grey.svg')
+
+.modal-form__row_4
+
+  & > :nth-child(1n + 5)
+    background-image: url('/img/star-grey.svg')
+
+.modal-form__row_5
+
+  & > :nth-child(1n + 6)
+    background-image: url('/img/star-grey.svg')
+
+.modal-form__input-row, .basket__input-row
+  font-size: 13px
+  font-weight: bold
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin-bottom: 20px
+  width: 100%
+
+.modal-form__title
+  font-size: 15px
+  font-weight: bold
+  margin-bottom: 30px
+
+.modal-form__bottom-row
+  width: 230px
+  margin-left: auto
+
+.modal-form__enter-reg-row
+  display: flex
+  margin-top: 20px
+  width: 230px
+  margin-left: auto
+
+.fogert-pass
+  color: rgba(87, 87, 87, .82)
+  font-size: 13px
+
+  &:hover
+    text-decoration: underline
+    
+.fancybox-close
+  background-position: center
+  background-repeat: no-repeat
+  background-size: contain
+  background-image: url('/img/Group595.png')!important
+  top: 10px
+  right: 10px
+  width: 20px
+  height: 20px
+
+.modal-form__news-spam
+  width: 230px
+  margin-left: auto
+  color: rgba(87, 87, 87, .82)
+  font-size: 13px
+  margin-bottom: 20px
+  
+.modal-form__agree-label
+  padding: 5px 0 2px 25px
+  background-position: left top 2px
+  background-repeat: no-repeat
+  background-image: url('/img/Rectangle716.png')
+  cursor: pointer
+  width: 100%
+  display: inline-block
+  margin-bottom: 10px
+
+.modal-form__i-agree:checked + label
+  background-image: url('/img/Group1107.png')
+
+.modal-form__require, .basket__require
+  position: relative
+
+  &:after
+    position: absolute
+    content: "*"
+    top: -2px
+    right: -8px
+    color: red
+
+.select-outer
+  position: relative
+
+  & select
+    cursor: pointer
+
+  & i
+    position: absolute
+    height: 35px
+    width: 35px
+    right: 0
+    background-color: #ffffff
+    border: solid 1px #080607
+    border-left: 0
+    pointer-events: none
+
+    &:before
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+
+.reg-form
+  width: 400px
+
+  & .btn
+    padding: 0 20px
+
+.header__slide
+  background-size: cover
+
+  & .box
+    align-items: center
+    height: 135px
+
+.header__slide-title
+  font-size: 30px
+  font-weight: bold
+  color: #ffffff
+
+.nav-outer
+  background-color: #292929
+
+.breadcrumbs
+  display: flex
+  color: #000000
+  width: 100%
+  margin: 22px 0 40px
+  flex-wrap: wrap
+
+  & > :first-child
+    background: linear-gradient(-120deg, transparent 10px, #eaeaea 0) top right, linear-gradient(-60deg, transparent 10px, #eaeaea 0) bottom right
+    background-size: 100% 53%
+    background-repeat: no-repeat
+
+  & > :last-child
+    flex-grow: 1
+    background: linear-gradient(120deg, transparent 10px, #eaeaea 0) bottom left, linear-gradient(60deg, transparent 10px, #eaeaea 0) top left
+    background-size: 100% 53%
+    background-repeat: no-repeat
+
+.breadcrumbs__item
+  padding: 10px 0
+  margin-bottom: 10px
+  background: linear-gradient(-120deg, transparent 10px, #eaeaea 0) top right, linear-gradient(-60deg, transparent 10px, #eaeaea 0) bottom right, linear-gradient(120deg, transparent 10px, #eaeaea 0) bottom left, linear-gradient(60deg, transparent 10px, #eaeaea 0) top left
+  background-size: 53% 53%
+  background-repeat: no-repeat
+
+.breadcrumbs__link
+  padding: 0 25px
+  width: 100%
+  display: inline-block
+
+  &:hover
+    color: #ff3333
+
+.catalog
+  color: #333
+  position: relative
+
+  & .box
+    align-items: flex-start
+    justify-content: flex-start
+    flex-wrap: nowrap
+
+.filter-col
+  min-width: 270px
+  max-width: 270px
+  margin-right: 35px
+
+.filter-col__drop-title, .news__drop-title
+  padding: 10px
+  border: 1px solid #080607
+  margin-bottom: -1px
+  display: flex
+  font-size: 13px
+  font-weight: bold
+  text-transform: uppercase
+  justify-content: space-between
+  align-items: center
+  cursor: pointer
+
+  &::after
+    content: url("/img/krest.svg")
+    width: 15px
+    height: 15px
+    border-radius: 50%
+    background-color: #333333
+    color: #ffffff
+
+.filter-col__drop-title.in
+
+  &::after
+    content: url("/img/minus.svg")
+
+.filter-col__drop-content, .news__drop-content
+  display: none
+  padding-top: 10px
+  padding-left: 10px
+
+.filter-col__drop-content-item, .news__drop-content-item
+  margin-bottom: 10px
+  display: flex
+  align-items: center
+  font-size: 15px
+  font-weight: bold
+
+  &::before
+    display: inline-block
+    content: ""
+    width: 5px
+    height: 5px
+    background-color: #333333
+    border-radius: 50%
+    margin-right: 5px
+
+.filter-col__title, .news__filter-title
+  font-size: 15px
+  font-weight: bold
+  margin-bottom: 25px
+  margin-top: 50px
+  position: relative
+  text-align: center
+
+  &::after, &::before
+    content: ""
+    display: block
+    position: absolute
+    background-color: #292929
+    opacity: .3
+    width: 35px
+    height: 1px
+    top: 50%
+    transform: translateY(-50%)
+
+  &::after
+    right: 0
+
+.noUi-horizontal .noUi-handle
+  width: 10px
+  height: 10px
+  border-radius: 50%
+  border: 3px solid #333
+
+  &::after, &::before
+    display: none
+
+.noUi-horizontal
+  height: 4px
+
+.noUi-connect
+  background-color: #333333
+
+html:not([dir=rtl]) .noUi-horizontal .noUi-handle
+  right: -9px
+
+.noUi-horizontal .noUi-handle
+  top: -5px
+
+.noUi-handle-upper
+  right: -1px!important
+
+.filter-col__price-title
+  font-size: 15px
+  font-weight: bold
+  margin-bottom: 15px
+
+.filter-col__price-range
+  margin-bottom: 20px
+
+.filter-col__price-inputs-row
+  display: flex
+  justify-content: space-between
+
+.filter-col__price-input
+  max-width: 50px
+  margin-top: 15px
+
+#rightDigit
+  text-align: right
+
+.filter-col__sort-kind-item
+  margin-bottom: 10px
+
+.filter-col__sort-kind-label
+  width: 100%
+  cursor: pointer
+  display: inline-block
+  font-size: 15px
+  padding: 1px 1px 1px 25px
+  background-position: top left
+  background-repeat: no-repeat
+  background-image: url('/img/Rectangle716.png')
+  
+.filter-col__sort-input:checked + label
+  background-image: url('/img/Group1107.png')
+
+.filter-col__sort-kind-title
+  font-size: 15px
+  font-weight: bold
+  margin: 20px 0 10px
+
+.filter-col__btns
+
+  & .btn_border
+    margin-left: 12px
+
+.tovar-item
+  width: 100%
+  max-width: 200px
+  position: relative
+
+  &::after
+    position: absolute
+    display: block
+    padding: 4px 6px 3px
+    top: 10px
+    left: 10px
+    font-size: 13px
+    color: #ffffff
+
+.tovar-item__img
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: #eaeaea
+  height: 200px
+  position: relative
+
+  &:hover .tovar-item__favorite
+    display: block
+
+  &:hover .tovar-item__zoom-it
+    display: flex
+
+.tovar-item__favorite
+  position: absolute
+  width: 20px
+  height: 20px
+  background-image: url('/img/Group640.png')
+  top: 10px
+  right: 10px
+  transition: .35s
+  display: none
+
+.tovar-item__zoom-it
+  position: absolute
+  bottom: 0
+  width: 100%
+  transition: .35s
+  height: 40px
+  background-color: #f4f4f4
+  justify-content: center
+  align-items: center
+  display: none
+
+  &::before
+    content: url("/img/search.png")
+    margin-right: 10px
+
+.filter-col__hits-slider, .filter-col__share-slider, .main-news__slider
+
+  & .tovar-item
+    margin: 0 auto
+
+  & .owl-nav
+    position: absolute
+    top: 105px
+    width: 100%
+
+    & button
+      width: 25px
+      height: 25px
+      border: 1px solid #333!important
+      font-size: 12px!important
+      top: 50%
+      position: absolute
+      transform: translateY(-50%)
+
+    & .owl-next
+      right: 0
+
+.owl-carousel .owl-item img
+  width: auto
+  max-width: 100%
+
+.tovar-item__title
+  font-size: 13px
+  font-weight: 300
+  line-height: 1.23
+  margin: 15px 0 10px
+
+.tovar-item__prive-row
+  display: flex
+  font-size: 13px
+  font-weight: bold
+  margin-bottom: 10px
+
+.tovar-item__old-price
+  color: #292929
+  text-decoration: line-through
+
+.tovar-item__new-price
+  color: #ff3333
+  margin-left: 10px
+
+.tover-item__size-row
+  font-size: 13px
+  opacity: .5
+
+.filter-col__delivery-calc
+  width: 100%
+  padding: 14px 0
+  background-color: #ff3333
+  font-weight: bold
+  font-size: 15px
+  margin-top: 50px
+  color: #ffffff
+
+.calc-form
+  width: 560px
+
+.calc-form__title
+  width: 100%
+  font-size: 15px
+  font-weight: bold
+  margin-bottom: 40px
+
+.calc-form__input-outer
+  width: 230px
+  margin-bottom: 20px
+
+.calc-form__input-title
+  font-size: 13px
+
+.calc-form__input
+  border: solid 1px #080607
+  height: 35px
+  padding: 5px 10px
+  margin-top: 5px
+  width: 100%
+
+.calc-form__btn-row
+  display: flex
+  width: 100%
+
+.calc-form__inputs-block
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+
+.fancybox-close-small
+  background-position: center
+  background-image: url('/img/Group595.png')
+  width: 20px
+  height: 20px
+  top: 10px!important
+  right: 10px!important
+
+.catalog__block
+  flex-grow: 1
+  margin: 0 -10px
+  display: flex
+  flex-wrap: wrap
+  position: relative
+
+.catalog__filter-row
+  display: flex
+  min-width: 100%
+
+.catalot__select-outer
+  width: 25%
+  padding: 0 10px
+  position: relative
+
+  & .fas
+    position: absolute
+    height: 35px
+    width: 35px
+    font-size: 15px
+    display: flex
+    justify-content: center
+    align-items: center
+    color: #000000
+    right: 10px
+    background-color: #ffffff
+    pointer-events: none
+    border: solid 1px #080607
+    border-left: 0
+    transition: .35s
+
+.catalot__select
+  border: solid 1px #080607
+  height: 35px
+  padding: 5px 10px
+  width: 100%
+  cursor: pointer
+  transition: .35s
+
+.catalot__select-outer_black
+
+  & .fas, & .catalot__select
+    color: #ffffff
+    background-color: #333333
+
+.filter-col__title_first
+  margin-top: 25px
+
+.catalog__select-title
+  font-size: 15px
+  font-weight: bold
+  margin-bottom: 5px
+
+.catalog__tovar-item
+  width: 25%
+  max-width: 25%
+  padding: 0 10px
+  margin-top: 40px
+
+.mm-menu
+  z-index: 1002
+
+.basket-link
+  position: fixed
+  right: 0
+  top: 500px
+  z-index: 1001
+  display: block
+  width: 45px
+  height: 45px
+  background-color: #333333
+  background-position: center
+  background-repeat: no-repeat
+  background-image: url('/img/basket.png')
+
+.catalog__basket-counter
+  display: block
+  width: 15px
+  height: 15px
+  line-height: 16px
+  text-align: center
+  color: #ffffff
+  background-color: #ff3333
+  box-shadow: 0 5px 6px 0 rgba(129, 129, 129, 0.16)
+  font-size: 8px
+  font-weight: bold
+  border-radius: 50%
+  position: absolute
+  right: 2px
+  top: 7px
+
+.catalog__pagination
+  width: 100%
+  display: flex
+  justify-content: center
+  margin-top: 50px
+
+.catalog__pagination-item
+  font-size: 13px
+  color: #9d9d9d
+  font-weight: bold
+  padding: 0 7.5px
+
+.catalog__pagination-link
+
+  &:hover
+    color: #292929
+
+.catalog__pagination-active
+  color: #292929
+
+.category-desc__title
+  color: #292929
+  font-size: 20px
+  font-weight: bold
+  margin: 60px 0 25px
+  text-align: center
+  width: 100%
+
+.category-desc__desc
+  font-size: 15px
+  line-height: 1.2
+  color: #707070
+  width: 100%
+  margin-bottom: 80px
+
+.basket__form
+  color: #292929
+  width: 100%
+  display: flex
+  flex-wrap: wrap
+
+.basket__inputs-block
+  width: 100%
+  display: flex
+  justify-content: space-between
+
+  & > :not(:last-child)
+    margin-right: 5px
+
+.basket__inputs-col
+  width: 100%
+  max-width: 400px
+
+.basket__textarea
+  resize: none
+  min-height: 90px
+
+.basket__input-row
+  align-items: flex-start
+
+.basket__input-name
+  margin-top: 10px
+
+.basket__comment
+  padding: 10px 7px
+  border: 1px solid #080706
+  width: 290px
+  resize: none
+  height: 255px
+
+.basket_tovars
+  width: 100%
+
+.basket__pay-way-label
+  display: block
+  cursor: pointer
+  padding: 3px 0 0 25px
+  background-position: left top
+  background-repeat: no-repeat
+  background-image: url('/img/Rectangle716.png')
+
+
+.basket__pay-way-input:checked + label
+  background-image: url('/img/Group1107.png')
+
+.basket__pay-way-opt
+  margin-bottom: 15px
+
+.basket__checkbox-block
+  display: flex
+  position: relative
+  padding: 25px 0 0 130px
+
+  & > :not(:last-child)
+    margin-right: 43px
+
+  &::before
+    content: "Способы оплаты"
+    position: absolute
+    top: 0
+    left: 0
+    font-size: 13px
+    font-weight: bold
+
+.basket__checkout
+  font-weight: bold
+  font-size: 13px
+
+.basket__delivery-type
+  max-width: 165px
+  font-size: 13px
+  padding-left: 25px
+
+.basket__delivery-desc
+  font-weight: 300
+  margin-top: 15px
+  font-style: oblique
+  line-height: 1.4
+
+.basket__del-calc
+  padding: 11px 13px
+  background-color: #ff3333
+  cursor: pointer
+  transition: .35s
+  color: #ffffff
+  font-size: 13px
+  border: 1px solid transparent
+  font-weight: bold
+  margin: 20px 0 0 25px
+
+  &:hover
+    border: 1px solid #292929
+    background-color: #ffffff
+    color: #292929
+
+.basket__checkbox-col
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+
+
+.catalog__trigger-row
+  width: 100%
+  display: none
+  margin: 10px 0 0
+  padding: 0 10px
+
+  & .btn
+    width: 100%
+
+    &:hover
+      background-color: #292929
+      color: #ffffff
+
+  & .triggered
+    background-color: #ff3333!important
+    color: #ffffff!important
+    border: 0!important
+
+.basket__tovar-desc
+  display: flex
+  align-items: center
+
+.basket__tovar-img
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 200px
+  height: 200px
+  background-color: #eaeaea
+  margin-right: 20px
+
+.basket__desc-items
+  position: relative
+
+  &::after, &::before
+    position: absolute
+    bottom: -20px
+    left: 0
+    font-size: 13px
+    font-weight: bold
+    display: none
+
+.basket__desc-item
+  margin-bottom: 7px
+  font-weight: 300
+  font-size: 13px
+
+.basket__in-stock
+
+  &::before
+    content: "В наличии"
+    display: block
+    color: #24af52
+
+.basket__out-of-stock
+
+  &::after
+    content: "Нет в  наличии"
+    display: block
+    color: #ff3333
+
+.basket__tovar-item
+  width: 100%
+  border-bottom: 1px solid #333
+  display: flex
+  padding: 20px 0
+  justify-content: space-between
+
+  & > :not(.basket__tovar-desc)
+    position: relative
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+.basket__tovar-desc
+  position: relative
+
+.basket_tovars
+  margin: 70px 0 50px
+  border-top: 1px solid #333
+
+  & > :first-child
+
+    .basket__total
+
+      &::after
+        content: "Итого"
+
+    .basket__countblock
+
+      &::after
+        content: "Кол-во"
+
+    .basket__price2
+
+      &::after
+        content: "Стоимость"
+
+    & > :not(.basket__tovar-desc)
+
+      &::after
+        position: absolute
+        top: -50px
+        left: 50%
+        transform: translateX(-50%)
+        font-weight: bold
+        font-size: 13px
+
+    & .basket__tovar-desc
+
+      &::after
+        position: absolute
+        content: "Товар"
+        left: 10px
+        top: -50px
+        font-size: 13px
+        font-weight: bold
+
+.basket__price
+  flex-direction: column
+  font-size: 13px
+  font-weight: bold
+
+  &::after
+    content: "Стоимость"
+
+.basket__old-price
+  text-decoration: line-through
+
+.basket__new-price
+  color: #ff3333
+  margin-bottom: 15px
+
+.basket__counter
+  width: 35px
+  height: 35px
+  border: 1px solid #292929
+  background-color: #eaeaea
+  display: flex
+  justify-content: center
+  align-items: center
+  cursor: pointer
+
+.basket__countblock-inner
+  display: flex
+
+.basket__input-counter
+  width: 65px
+  height: 35px
+  background-color: #ffffff
+  border: 1px solid #292929
+  text-align: center
+  margin: 0 10px
+
+.basket__total-input
+  text-align: center
+
+.basket__input-name-outer
+  display: flex
+
+.basket__to-catalog
+  font-size: 13px
+  display: flex
+  line-height: 29px
+  width: 100%
+  margin: 20px 0
+
+  & .fas
+    width: 25px
+    height: 25px
+    border: 1px solid #292929
+    display: flex
+    justify-content: center
+    align-items: center
+    font-size: 12px
+    margin-right: 10px
+
+.pesonal-menu
+  width: 100%
+  max-width: 260px
+
+.personal-menu__link
+  display: inline-block
+  width: 100%
+  padding: 10px 20px
+  color: #333333
+  font-size: 15px
+
+.personal-menu__link_active
+  font-weight: bold
+
+.personal-menu__item
+  transition: .35s
+
+  &:hover
+    background-color: #eaeaea
+
+.personal-area__sub-block
+  color: #333333
+  width: 285px
+  font-size: 13px
+
+.personal-area__sub-title
+  margin-bottom: 15px
+
+.personal-area__input
+  width: 100%
+  height: 35px
+  padding: 5px 10px
+  border: 1px solid #080607
+  margin-top: 10px
+
+.personal-area__label
+  font-weight: bold
+  padding: 3px 0 0 25px
+  background-position: left center
+  background-repeat: no-repeat
+  background-image: url('/img/Rectangle716.png')
+  cursor: pointer
+  margin-right: 20px
+
+.personal-area__checkbox:checked + label
+  background-image: url('/img/Group1107.png')
+
+.personal-area__list-title
+  margin: 20px 0 10px
+
+.personal-area__button-row
+  margin: 20px 0
+
+  & .btn_white
+    margin-left: 20px
+
+.personal-area-sub
+
+  & .box
+    justify-content: space-between
+
+.personal-area
+  padding-bottom: 40px
+  color: #333333
+
+.personal-area__notes
+  width: 100%
+  max-width: 474px
+
+.personal-area__footnote2
+  font-size: 13px
+  font-weight: 300
+  font-style: oblique
+
+.personal-area__notes-item
+  font-size: 13px
+  margin-top: 20px
+
+.personal-data__input
+  height: 35px
+  border: 1px solid #080607
+  padding: 5px 10px
+  width: 100%
+  margin-top: 10px
+  cursor: pointer
+
+.personal-data__input-row
+  font-weight: bold
+  margin-bottom: 20px
+
+  & .fas
+    position: absolute
+    height: 35px
+    width: 35px
+    border: 1px solid #080706
+    border-left: 0px
+    bottom: 0
+    right: 0
+    pointer-events: none
+    background-color: #ffffff
+    display: flex
+    justify-content: center
+    align-items: center
+
+.personal-data__textarea
+  height: auto
+  resize: none
+  min-height: 100px
+
+.personal-data__title
+  font-size: 15px
+  font-weight: bold
+  margin-bottom: 25px
+
+.personal-data__input-note
+
+  &::after
+    content: "Пароль должен быть не менее 6 символов длиной."
+    font-weight: normal
+    margin-top: 15px
+    display: inline-block
+    color: #707070
+
+.tovar-item_out-of-stock
+
+  &::after
+    content: "Нет в наличии"
+    background-color: #f7acac
+
+.tovar-item_new
+
+  &::after
+    content: "Новое"
+    background-color: #98d8ad
+
+.favorite-block
+  flex-grow: 1
+  display: flex
+  flex-wrap: wrap
+  margin: 0 -15px
+
+.favorite-block__title
+  width: 100%
+  font-size: 15px
+  font-weight: bold
+  margin-bottom: 25px
+  padding: 0 15px
+
+.history-block
+  display: flex
+  flex-grow: 1
+  flex-direction: column
+  margin-left: 30px
+
+.history-block__desc
+  font-size: 13px
+  font-weight: 300
+  font-style: oblique
+
+.history-block__list
+  width: 100%
+  border-bottom: 1px solid #333
+  margin-bottom: 20px
+
+  & > :first-child
+
+    & .history-block__sub-list
+
+      & .history-block__sub-item
+        position: relative
+
+        &::after
+          position: absolute
+          top: -45px
+          left: 0
+          font-weight: bold
+
+      & > :nth-child(1)
+
+        &::after
+          content: "Заказ"
+          left: 10px
+
+      & > :nth-child(2)
+
+        &::after
+          content: "Дата заказа "
+
+      & > :nth-child(3)
+
+        &::after
+          content: "Стоимость"
+
+      & > :nth-child(4)
+
+        &::after
+          content: "Статус"
+          left: auto
+          right: 10px
+
+.history-block__item
+  padding: 20px 0
+  font-size: 13px
+  font-weight: 300
+  border-top: 1px solid #333
+
+.history-block__link
+
+  &:hover
+    color: #ff0000
+
+
+.history-block__sub-list
+  display: flex
+  width: 100%
+  justify-content: space-between
+
+.order-history
+
+  & .box
+    flex-wrap: nowrap
+
+.expected-list__tovar-img
+  width: 100px
+  height: 100px
+  background-color: #eaeaea
+  display: flex
+  justify-content: center
+  align-items: center
+
+  & img
+    max-width: 75%
+
+.expected-list
+  flex-grow: 1
+  margin-left: 30px
+  border-bottom: 1px solid #080607
+
+  &::before
+    content: "Вы подписанные и ожидаете ответа"
+    font-size: 15px
+    text-transform: uppercase
+    font-weight: bold
+    margin-bottom: 50px
+    display: inline-block
+
+  & > :first-child
+
+    & > *
+      position: relative
+
+      &::before
+        position: absolute
+        left: 0
+        top: -45px
+        font-weight: bold
+        color: #333333
+
+    & .expected-list__tovar
+
+      &::before
+        content: "Товар"
+
+    & .expected-list__discount
+
+      &::before
+        content: "Скидка"
+
+    & .expected-list__price
+
+      &::before
+        content: "Цена"
+
+    & .expected-list__quantity
+
+      &::before
+        content: "Кол-во"
+
+    & .expected-list__status
+
+      &::before
+        content: "Статус"
+        left: auto
+        right: 0
+
+.expected-list__quantity
+  min-width: 50px
+
+.expected-list__item
+  padding: 20px 0
+  border-top: 1px solid #080607
+  font-size: 13px
+  display: flex
+  justify-content: space-between
+
+  & > :not(.expected-list__tovar)
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+.expected-list__tovar
+  display: flex
+
+.expected-list__desc-items
+  display: flex
+  flex-direction: column
+  justify-content: center
+  margin-left: 10px
+
+  &::after
+    font-size: 13px
+    font-weight: bold
+    display: inline-block
+
+.expected-list__desc-item
+  margin-bottom: 7px
+  font-size: 13px
+  font-weight: 300
+
+.expected-list__in-stock
+
+  &::after
+    content: "В наличии"
+    color: #24af52
+
+.expected-list__out-of-stock
+
+  &::after
+    content: "Нет в наличии"
+    color: #ff0000
+
+.personal-area
+
+  & .box
+    align-items: flex-start
+    flex-wrap: nowrap
+
+.expected-list__discount
+  color: #ff0000
+
+.favorite-block__tovar-item
+  padding: 0 15px
+  width: 33.333333333333%
+  max-width: 100%
+  margin-bottom: 20px
+
+  &::after
+    left: 25px
+
+.expected-list__price
+  display: flex
+  flex-direction: column
+
+.expected-list__new-price
+  font-weight: bold
+  color: #ff0000
+
+.expected-list__old-price
+  font-weight: bold
+  margin-top: 10px
+  color: #333333
+  text-decoration: line-through
+
+.tovar-block
+  width: 100%
+  display: flex
+  flex-wrap: wrap
+
+.tovar-block__left
+  max-width: 555px
+
+.tovar-block__main-slide
+  padding: 30px 0
+  background-color: #eaeaea
+  margin-bottom: 30px
+  display: flex
+  justify-content: center
+  align-items: center
+  position: relative
+
+.tovar-block__nav-slider
+  margin: 0 -15px
+  width: auto
+  min-width: 100%
+
+.tovar-block__nav-slide
+  height: 165px
+  padding: 0 15px
+
+.tovar-block__nav-slide-inner
+  background-color: #eaeaea
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 165px
+
+.tovar-block__favorite
+  width: 56px
+  height: 56px
+  background-position: center
+  background-repeat: no-repeat
+  background-image: url('/img/bigheart.png')
+  position: absolute
+  top: 28px
+  right: 28px
+  background-size: 100% 100%
+
+.tovar-block__right
+  color: #333333
+  font-size: 15px
+  margin-left: 30px
+  flex-grow: 1
+
+.tovar-block__title
+  font-weight: bold
+
+.tovar-block__article
+  font-weight: 300
+  margin: 20px 0
+
+.tovar-block__review-row
+  display: flex
+  font-weight: bold
+  padding-bottom: 25px
+  border-bottom: 1px solid #080607
+
+.tovar-block__tovar-status
+  margin-left: 95px
+
+  &::after
+    margin-left: 4px
+    display: inline-block
+
+.tovar-block__tovar-status_not-available
+
+  &::after
+    content: "Нет в наличии"
+    color: #ff0000
+
+.tovar-block__tovar-status_available
+
+  &::after
+    content: "В наличии"
+    color: #24af52
+
+.tovar-block__color-rectangle
+  width: 20px
+  height: 20px
+  display: inline-block
+  margin: 0 10px
+
+.tovar-block__color-select
+  display: none
+  border: 1px solid #080706
+  border-top: 0
+  width: calc(100% + 2px)
+  position: absolute
+  left: -1px
+  bottom: -1px
+  transform: translateY(100%)
+  z-index: 2
+
+.tovar-block__proxy-select
+  display: flex
+  align-items: center
+  position: relative
+  min-width: 200px
+  height: 35px
+  border: 1px solid #080607
+  cursor: pointer
+
+  & .fas
+    right: -1px!important
+    bottom: -1px!important
+
+.tovar-block__form
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+
+.tovar-block__color-item-inner
+  display: flex
+  align-items: center
+  flex-direction: row-reverse
+  justify-content: flex-end
+  background-color: #ffffff
+  height: 33px
+
+.tovar-block_price
+  font-size: 30px
+  margin: 20px 0
+
+.tovar-block__select-outer
+  position: relative
+  margin-bottom: 20px
+
+  & .fas
+    width: 35px
+    height: 35px
+    background-color: #ffffff
+    position: absolute
+    right: 0
+    bottom: 0
+    border: 1px solid #080706
+    border-left: 0
+    display: flex
+    justify-content: center
+    align-items: center
+    pointer-events: none
+
+.tovar-block__size
+  border: 1px solid #080607
+  height: 35px
+  min-width: 200px
+  cursor: pointer
+  padding-left: 10px
+
+.tovar-block__select-title
+  font-weight: bold
+  margin-bottom: 5px
+  
+.tovar-block__add-to-cart
+  padding-left: 48px
+  padding-right: 20px
+  background-position: center left 20px
+  background-repeat: no-repeat
+  background-image: url('/img/basket.png')
+  font-size: 13px
+  font-weight: bold
+
+.tovar-block__prop
+  margin-top: 15px
+  line-height: 1.2
+  max-width: 460px
+
+  & span
+    font-weight: bold
+    margin-right: 3px
+
+.tovar-card
+
+  & .tovar-item__img
+    height: 165px
+
+.tovar-block__recommend
+  color: #333333
+
+  & .owl-nav
+    position: absolute
+    right: 15px
+    top: -55px
+    display: flex
+    justify-content: space-between
+    width: 70px
+
+    & .fas
+      height: 25px
+      width: 25px
+      display: flex
+      justify-content: center
+      align-items: center
+      border: 1px solid #080607
+      font-size: 12px
+
+.tovar-block__recommend-item
+  max-width: none
+
+.tovar-block__recommend-title
+  margin: 60px 0 20px
+  padding-bottom: 10px
+  color: #333333
+  font-weight: bold
+  text-transform: uppercase
+  border-bottom: 1.5px solid #080607
+  font-size: 15px
+
+.tovar-block__recommend-block
+  max-width: 555px
+
+.tovar-block__sides
+  display: flex
+  width: 100%
+
+.tovar-block__rec-rew
+  display: flex
+  flex-wrap: wrap
+  width: 100%
+
+.tovar-block__review
+  flex-grow: 1
+  margin-left: 30px
+  color: #333333
+
+.tovar-block__review-title
+  border-bottom: 1.5px solid #080607
+  font-weight: bold
+  padding-bottom: 10px
+  margin-top: 60px
+  font-size: 15px
+
+.tovar-block__data
+  margin: 20px 0
+  display: flex
+  align-items: center
+
+.tovar-block__review-img
+  width: 80px
+  height: 80px
+  border-radius: 50%
+  overflow: hidden
+  display: flex
+  justify-content: center
+  align-items: center
+  margin-right: 20px
+
+  & img
+    max-width: 100%
+
+.tovar-block__name-sity
+  font-size: 13px
+
+.tovar-block__review-name
+  font-weight: bold
+  margin-bottom: 5px
+
+.tovar-block__review-text
+  margin-bottom: 20px
+  color: #707070
+  line-height: 1.2
+  max-width: 360px
+
+.tovar-block__recently
+  display: flex
+  flex-wrap: wrap
+  margin: 0 -15px
+  color: #333333
+
+.tovar-block__recently-title
+  border-bottom: 1.5px solid #080607
+  font-weight: bold
+  padding-bottom: 10px
+  width: 100%
+  margin: 50px 15px 20px
+  font-size: 15px
+
+.tovar-block__recently-item
+  width: 16.666666666666667%
+  padding: 0 15px
+  margin-bottom: 20px
+
+.main-desc
+  background-color: #f9f9f9
+  color: #333333
+  padding-bottom: 70px
+  margin-top: 50px
+
+.main-desc__title
+  margin: 35px auto 25px
+  font-size: 20px
+  font-weight: bold
+
+.main-desc__text
+  font-size: 15px
+  line-height: 1.2
+  color: #707070
+
+.delivery
+  color: #333333
+  padding-bottom: 40px
+
+.content__title
+  font-weight: bold
+  font-size: 15px
+  margin-bottom: 20px
+
+.content__item-title
+  font-size: 13px
+  font-weight: bold
+  margin-bottom: 10px
+  color: #333333
+
+.content__item
+  font-size: 13px
+  color: #707070
+  line-height: 1.2
+  padding-bottom: 5px
+  border-bottom: 0.2px solid #999
+  margin-bottom: 25px
+
+.delivery__select-outer
+  display: flex
+  align-items: center
+  position: relative
+  flex-wrap: wrap
+
+.delivery__select-row
+  position: relative
+  margin-top: 10px
+
+  & .fas
+    width: 35px
+    height: 35px
+    position: absolute
+    bottom: 0
+    right: 0
+    background-color: #ffffff
+    pointer-events: none
+    display: flex
+    justify-content: center
+    align-items: center
+    border: 1px solid #080607
+    border-left: 0
+
+.delivery__select-title
+  font-size: 13px
+  font-weight: bold
+  margin-right: 20px
+
+
+.delivery__select
+  height: 35px
+  width: 230px
+  border: 1px solid #080607
+  cursor: pointer
+
+.about
+  padding-bottom: 25px
+
+.guarantee
+  color: #333333
+  padding-bottom: 45px
+
+.guarantee__title
+  font-size: 15px
+  font-weight: bold
+  margin-bottom: 20px
+  width: 100%
+
+.guarantee__left, .guarantee__right
+  width: 50%
+
+.guarantee__sub-title
+  font-weight: bold
+  margin-bottom: 20px
+  color: #292929
+
+.guarantee__list-item
+  margin-top: 20px
+  display: flex
+
+.guarantee__list-item_img
+  width: 50px
+  height: 50px
+  background-position: center
+  background-repeat: no-repeat
+  margin-right: 10px
+  flex-shrink: 0
+
+.guarantee__list-item_desc
+  display: flex
+  font-size: 13px
+  flex-direction: column
+  justify-content: space-between
+  padding: 3px 0
+
+.guarantee__list-item_note
+  font-size: 13px
+  font-weight: 300
+  font-style: oblique
+
+.guarantee__review-img
+  width: 80px
+  height: 80px
+  border-radius: 50%
+  overflow: hidden
+  margin-right: 20px
+
+.guarantee__review-name
+  font-size: 13px
+  font-weight: bold
+  margin-bottom: 7px
+
+.guarantee__review-sity
+  font-size: 13px
+
+.guarantee__review-data
+  display: flex
+  align-items: center
+
+.guarantee__review-text
+  font-size: 15px
+  color: #707070
+  line-height: 1.2
+  max-width: 360px
+  margin-top: 20px
+
+.contacts
+  color: #333333
+  padding-bottom: 35px
+
+.contacts__block
+  display: flex
+  width: 100%
+  flex-wrap: wrap
+
+.contacts__title
+  font-weight: bold
+  font-size: 15px
+  margin-bottom: 10px
+
+.contacts__map
+  height: 250px
+  width: 100%
+  margin-bottom: 25px
+
+.contacts__sub-title
+  margin-bottom: 15px
+  font-size: 13px
+  font-weight: bold
+  color: #292929
+  text-transform: uppercase
+
+.contacts__info, .contacts__form
+  width: 50%
+
+.contacts__info-item
+  font-size: 13px
+  margin-bottom: 10px
+
+  & span
+    font-weight: bold
+
+.contacts__input-outer
+  display: flex
+  flex-direction: column
+  margin-bottom: 20px
+
+.contacts__input-title
+  font-size: 13px
+  font-weight: bold
+  color: #292929
+  margin-bottom: 10px
+
+.contacts__input
+  width: 100%
+  max-width: 300px
+  height: 35px
+  border: solid 1px #080607
+
+.contacts__textarea
+  resize: none
+  max-width: 100%
+  height: 100px
+
+.news
+  color: #333333
+  position: relative
+
+  .box
+    flex-wrap: nowrap
+
+.news_filter
+  width: 100%
+  max-width: 265px
+  margin-right: 30px
+  flex-shrink: 0
+
+.news-block
+  margin: 0 -15px
+  display: flex
+  flex-wrap: wrap
+  flex-grow: 1
+
+.news-item
+  padding: 0 15px
+  width: 33.33333333333%
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  margin-bottom: 50px
+
+.news-block__title
+  width: 100%
+  padding: 0 15px
+  margin-bottom: 25px
+  font-weight: bold
+
+.news-block__subtitle
+  padding: 0 15px
+  margin-bottom: 15px
+  font-weight: bold
+  font-size: 15px
+
+.news-item__date
+  padding: 9px 35px 8px
+  background-color: #eaeaea
+  color: #767677
+  font-size: 13px
+  opacity: .82
+
+.news-item__title
+  margin: 19px 0 18px
+  font-size: 13px
+  font-weight: bold
+  text-decoration: underline
+  line-height: 1.3
+
+.news-item__img
+  margin-bottom: 20px
+
+  & img
+    width: auto
+    max-width: 100%
+.news-item__note
+  font-size: 11px
+  color: #707070
+  line-height: 1.09
+  max-width: 760px
+
+.main-desc
+
+  & .box
+    flex-wrap: wrap
+
+.single-news__item
+  width: 100%!important
+
+  & .news-item__note
+    margin-top: 20px
+
+.news__block news-block
+  display: flex
+  flex-wrap: wrap
+
+.news-tabs
+  width: 100%
+
+.news-tabs__tab
+  display: none
+
+.r-tabs-accordion-title
+  display: none
+
+li.r-tabs-state-active
+
+  & a
+    border-bottom: 1px dashed #333
+
+.news-tabs__list
+  display: flex
+  margin-bottom: 20px
+  padding: 15px
+
+  & li
+    margin-right: 30px
+    font-size: 13px
+    font-weight: bold
+
+.news-tabs__tab-inner
+  width: 100%
+  display: flex
+  flex-wrap: wrap
+
+.single-news__box
+  position: relative
+  margin-bottom: 20px
+
+  &::after
+    content: ""
+    width: calc(100% - 30px)
+    height: 1px
+    background-color: #292929
+    bottom: 0
+    position: absolute
+
+.single-news__all-news
+  font-size: 13px
+  color: #292929
+  display: flex
+  align-items: center
+
+  & .fas
+    width: 25px
+    height: 25px
+    border: 1px solid #292929
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-right: 15px
+
+.basket__super-total
+  display: flex
+  align-items: flex-start
+  justify-content: space-between
+  width: 100%
+
+.basket__super-total-list
+  text-align: right
+  font-weight: bold
+
+  & input
+    width: 100px
+    text-align: right
+    font-size: 13px
+    color: #292922
+
+.basket__super-total-item
+  margin-bottom: 10px
+  font-size: 13px
+  color: #292929
+
