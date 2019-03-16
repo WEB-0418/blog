@@ -22,7 +22,9 @@
             @include('blog.filters')
             @include('blog.news')
 
+
           </div>
+          {{ $news->links('vendor.pagination.simple-bootstrap-4') }}
 
           @include('blog.description')
 
