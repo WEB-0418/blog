@@ -33,6 +33,19 @@ require('./bootstrap');
 // });
 
 
-require('./libs.min.js');
+// require('./libs.min.js');
+
+require('owl.carousel');
+require('@fancyapps/fancybox');
+require('hamburgers');
+require('jquery.mmenu');
+require('nouislider');
+require('jquery-form-styler');
+require('responsive-tabs');
+// require('app/vendor/css/preloader.css');
+require('slick-carousel');
+
+
+
 require('./common.js');
 

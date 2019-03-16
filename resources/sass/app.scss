@@ -8,10 +8,21 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+@import '~owl.carousel/dist/assets/owl.carousel.css';
+@import '~@fancyapps/fancybox/dist/jquery.fancybox.css';
+@import '~hamburgers/dist/hamburgers.css';
+@import '~jquery.mmenu/dist/jquery.mmenu.all.css';
+@import '~nouislider/distribute/nouislider.css';
+@import '~jquery-form-styler/dist/jquery.formstyler.css';
+@import '~responsive-tabs/css/responsive-tabs.css';
+// @import 'app/vendor/css/preloader.css';
+@import '~slick-carousel/slick/slick.css';
+
 // from Andrew
 @import 'fonts';
 @import 'main';
 @import 'media';
+
 
 .navbar-laravel {
   background-color: #fff;

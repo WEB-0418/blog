@@ -7,7 +7,7 @@ $( document ).ready(function() {
         itemSelector: '.grid__item'
     };
 
-    initGrid($('.grid'), gridProps);//Инит кирпичной кладки на главной
+    // initGrid($('.grid'), gridProps);//Инит кирпичной кладки на главной
 
     var mainSlider = {
         arrows: false,

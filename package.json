@@ -26,13 +26,14 @@
     "dependencies": {
         "@fancyapps/fancybox": "^3.3.5",
         "animate.css": "^3.7.0",
-        "masonry-layout": "^4.2.2",
-        "owl.carousel": "^2.3.4",
-        "responsive-tabs": "^1.6.3",
-        "slick-carousel": "^1.8.1",
         "hamburgers": "^0.9.3",
         "imagemin-pngquant": "^6.0.0",
+        "jquery-form-styler": "^2.0.2",
         "jquery.mmenu": "^7.0.6",
-        "nouislider": "^11.1.0"
+        "masonry-layout": "^4.2.2",
+        "nouislider": "^11.1.0",
+        "owl.carousel": "^2.3.4",
+        "responsive-tabs": "^1.6.3",
+        "slick-carousel": "^1.8.1"
     }
 }
