@@ -29,3 +29,57 @@ https://www.youtube.com/watch?v=3uYXAcit_Sg&list=PL3VM-unCzF8iPERY07XRw0JXG_c50C
 
 
 
+	product
+		- id
+		- articule
+		- name
+		- price
+		- is_present
+		- color_id
+		- size
+		- brand_id
+		- season_id
+		- material_id
+		- producer_id
+		- description
+		- in_promotion
+		- is_hit
+		- category_id
+
+	product_category
+		- id
+		- name
+
+	seasons
+		- id
+		- name
+		- slug
+
+	material
+		- id
+		- name
+		- slug
+
+	brand
+		- id
+		- name
+		- slug
+
+	color
+		- id
+		- name
+		- hex
+		- slug
+
+	producer
+		- id
+		- name
+		- slug
+
+	comment
+		- id
+		- user_avatar
+		- user_name
+		- user_location
+		- text
+		- product_id
