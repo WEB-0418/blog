@@ -26,7 +26,7 @@
               
               @include('article.content')
 
-              {{-- @include('article.tabs') --}}
+              @include('article.tabs')
 
             </div>
           </div>
