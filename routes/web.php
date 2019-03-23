@@ -19,5 +19,5 @@ Route::get('/', function () {
 
 Route::get('/blog', 'BlogController@index')->name('blog');
 Route::get('/blog/{slug}', 'BlogController@show')->name('article');
-Route::get('/blog/category/{slug}', 'BlogCategoryController@show')->name('blog-category');
+Route::get('/blog/category/{slug}', 'BlogCategoryController@index')->name('blog-category');
 

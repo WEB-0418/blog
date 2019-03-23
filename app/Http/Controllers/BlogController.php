@@ -4,19 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\News;
-use Carbon\Carbon;
+
 
 class BlogController extends Controller
 {
-	protected $monthNames;
-
-	public function __construct()
-	{
-		$this->monthNames = [
-    		'января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'
-
-    	];
-	}
+	
 
 	/**
 	 * Для вывода данных на страницу всех новостей
@@ -27,8 +19,13 @@ class BlogController extends Controller
     {
 
     	$news = News::paginate(12);
-    	return view('blog.blog', [
-    		'news' => $news
+        foreach ($news as $item) {
+            $item->date = $this->formattedDate($item->created_at);
+        }
+
+        return view('blog.blog', [
+    		'news' => $news, 
+            'page_title' =>'НОВОСТИ'
     	]);
     }
 
@@ -45,20 +42,10 @@ class BlogController extends Controller
 
     	return view('article.index', [
     		'article' => $article,
+            'categories' => $this->categories,
     		'date' => $this->formattedDate($article->updated_at)
     	]);
     }
 
-    /**
-     * Для получения даты в требуемом формате
-     * 
-     * @param $date Carbon
-     * @return string
-     */
-    private function formattedDate(Carbon $date): string
-    {
-    	return $date->day . ' ' 
-    			. $this->monthNames[$date->month - 1] . ' ' 
-    			. $date->year;
-    }
+    
 }

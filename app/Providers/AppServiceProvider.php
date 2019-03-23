@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
+use App\Models\NewsCategory;
 use Carbon\Carbon;
 
 class AppServiceProvider extends ServiceProvider
@@ -24,7 +26,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        setlocale(LC_TIME, 'ru_RU.UTF-8');
-        Carbon::setLocale(config('app.locale'));
+        View::composer('blog.filters', function ($view) {
+            $view->with([
+                'categories' => NewsCategory::all()
+            ]);
+        });
     }
 }
