@@ -8,6 +8,7 @@ $factory->define(App\Models\News::class, function (Faker $faker) {
         'content' => $faker->text($maxNbChars = 400),
         'img' => $faker->imageUrl,
         'slug' => $faker->slug,
-        'author_id' => $faker->numberBetween(1, 10)
+        'author_id' => $faker->numberBetween(1, 10),
+        'views' => $faker->numberBetween(1, 1000000)
     ];
 });

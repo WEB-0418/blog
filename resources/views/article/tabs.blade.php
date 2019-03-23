@@ -20,7 +20,21 @@
     </div>
   </div>
   <div class="news-tabs__tab" id="tab-2">
-{{--     <div class="news-tabs__tab-inner"><a class="anews-block__item news-item" href="#">
+    <div class="news-tabs__tab-inner">
+      @foreach($popularNews as $popularArticle)
+      
+        <a class="news-block__item news-item" href="{{ route('article', ['slug' => $popularArticle->slug]) }}">
+          <div class="news-item__img"><img src="{{ $popularArticle->img }}" alt="{{ $popularArticle->title }}"></div>
+          <div class="news-item__date">{{ $popularArticle->date ?? '' }}</div>
+          <div class="news-item__title">{{ $popularArticle->title }}</div>
+          <div class="news-item__note">{{ $popularArticle->content }}</div>
+        </a>
+
+      @endforeach
+
+    </div>
+
+{{--     <a class="anews-block__item news-item" href="#">
         <div class="news-item__img"><img src="img/news.jpg"></div>
         <div class="news-item__date">13 августа 2018</div>
         <div class="news-item__title">Теперь в нашем магазине представлен новый бренд детских носков Unswear</div>

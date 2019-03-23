@@ -39,18 +39,24 @@ class BlogController extends Controller
     {
 
     	$article = News::where('slug', $slug)->first();
+        $article->increment('views');
 
-        $latestNews = News::orderBy('updated_at', 'desc')->take(6)->get();
+        $latestNews = News::orderBy('updated_at', 'desc')->take(config('my-config.tabsCount'))->get();
+        $popularNews = News::orderBy('views')->take(config('my-config.tabsCount'))->get();
 
         foreach ($latestNews as $item) {
             $item->date = $this->formattedDate($item->created_at);
         }
 
+        foreach ($popularNews as $item) {
+            $item->date = $this->formattedDate($item->created_at);
+        }
+
     	return view('article.index', [
     		'article' => $article,
-            // 'categories' => $this->categories,
     		'date' => $this->formattedDate($article->updated_at),
-            'latestNews' => $latestNews
+            'latestNews' => $latestNews,
+            'popularNews' => $popularNews
     	]);
     }
 
