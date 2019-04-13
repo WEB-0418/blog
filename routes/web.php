@@ -20,4 +20,8 @@ Route::get('/', function () {
 Route::get('/blog', 'BlogController@index')->name('blog');
 Route::get('/blog/{slug}', 'BlogController@show')->name('article');
 Route::get('/blog/category/{slug}', 'BlogCategoryController@index')->name('blog-category');
+Route::get('/delivery', 'DeliveryController@show');
+Route::get('/about', 'AboutController@show');
+Route::get('/guarantee', 'GuaranteeController@show');
+Route::get('/contacts', 'ContactsController@show');
 

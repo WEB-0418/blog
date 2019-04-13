@@ -63,7 +63,7 @@
         <li class="main-nav__nav-item"><a class="main-nav__nav-link" href="#">ОЖИДАЕМЫЙ ТОВАР</a></li>
         <li class="main-nav__nav-item"><a class="main-nav__nav-link" href="#">РАСПРОДАЖА</a></li>
         <li class="main-nav__nav-item"><a class="main-nav__nav-link" href="#">О КОМПАНИИ</a></li>
-        <li class="main-nav__nav-item"><a class="main-nav__nav-link" href="#">НОВОСТИ</a></li>
+        <li class="main-nav__nav-item"><a class="main-nav__nav-link" href="{{ route('blog') }}">НОВОСТИ</a></li>
         <li class="main-nav__nav-item"><a class="main-nav__nav-link" href="#">КОНТАКТЫ</a></li>
       </ul>
     </nav>

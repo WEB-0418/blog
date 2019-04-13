@@ -21,7 +21,6 @@ class BlogCategoryController extends Controller
 
     	return view('blog.blog', [
     		'news' => $news, 
-        'categories' => $this->categories, 
         'page_title' =>$category->name
     	]);
     }

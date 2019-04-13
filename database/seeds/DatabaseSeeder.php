@@ -15,7 +15,14 @@ class DatabaseSeeder extends Seeder
         	AuthorSeeder::class,
         	NewsCategorySeeder::class,
 			NewsTableSeeder::class,
-			// NewsNewsCategorySeeder::class
+            BrandsTableSeeder::class,
+            ColorsTableSeeder::class,
+            MaterialsTableSeeder::class,
+            ProducersTableSeeder::class,
+            SeasonsTableSeeder::class,
+            ProductCategoriesTableSeeder::class,
+            ProductsTableSeeder::class,
+            CommentsTableSeeder::class,
         ]);
     }
 }

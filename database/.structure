@@ -46,32 +46,33 @@ https://www.youtube.com/watch?v=3uYXAcit_Sg&list=PL3VM-unCzF8iPERY07XRw0JXG_c50C
 		- is_hit
 		- category_id
 
-	product_category
+	product_category - 10 штук
 		- id
 		- name
+		- slug  ///  добавлено 06.04.2019
 
-	seasons
-		- id
-		- name
-		- slug
-
-	material
+	seasons - 6 штук
 		- id
 		- name
 		- slug
 
-	brand
+	material - 10 штук
 		- id
 		- name
 		- slug
 
-	color
+	brand - 10 штук
+		- id
+		- name
+		- slug
+
+	color - 10 штук
 		- id
 		- name
 		- hex
 		- slug
 
-	producer
+	producer - 10 штук
 		- id
 		- name
 		- slug

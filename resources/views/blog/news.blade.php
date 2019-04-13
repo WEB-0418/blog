@@ -1,7 +1,7 @@
 @if ($news->count())
 
   <div class="news__block news-block">
-    <div class="news-block__title">НОВОСТИ</div>
+    <div class="news-block__title">{{ $page_title }}</div>
 
     @foreach($news as $n)
 
