@@ -11,7 +11,17 @@
         @include('components.common-header')
         @include('components.common-nav')
         
-        @include('components.breadcrumbs')
+        {{-- @include('components.breadcrumbs') --}}
+
+        @if (Route::currentRouteName() === 'blog-category')
+        
+          {{ Breadcrumbs::render('category', $category) }}
+        
+        @else
+        
+          {{ Breadcrumbs::render('blog') }}
+        
+        @endif
 
         <section class="news">
 

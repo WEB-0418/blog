@@ -11,7 +11,8 @@
         @include('components.common-header')
         @include('components.common-nav')
         
-        @include('components.breadcrumbs')
+        {{-- @include('components.breadcrumbs') --}}
+        {{ Breadcrumbs::render('article', $article) }}
         
         <section class="news single-news">
 

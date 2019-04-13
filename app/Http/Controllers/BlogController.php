@@ -35,9 +35,8 @@ class BlogController extends Controller
      * @param $slug string
      * @return mixed
      */
-    public function show(string $slug)
+    public function show(Request $request, string $slug)
     {
-
     	$article = News::where('slug', $slug)->first();
         $article->increment('views');
 
