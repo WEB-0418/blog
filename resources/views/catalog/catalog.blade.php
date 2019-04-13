@@ -28,7 +28,7 @@
 
 							@include ('catalog.products')
 
-							@include ('catalog.pagination')
+							{{ $products->onEachSide(1)->links('catalog.pagination') }}
             
             </div>
           </div>

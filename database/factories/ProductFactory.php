@@ -17,7 +17,9 @@ $factory->define(App\Models\Product::class, function (Faker $faker) {
 		'category_id' => $faker->numberBetween(1, App\Models\ProductCategory::count()),
 		'description' => $faker->text($maxNbChars = 500),  
   	    'in_promotion' => $faker->boolean($chanceOfGettingTrue = 20),
-		'is_hit' => $faker->boolean($chanceOfGettingTrue = 20),     
+		'is_hit' => $faker->boolean($chanceOfGettingTrue = 20),
+		'thumb' => $faker->imageUrl(200, 200),
+		'image' => $faker->imageUrl(1920, 1080),
     ];
 });
 

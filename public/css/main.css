@@ -13283,6 +13283,10 @@ a.text-dark:focus {
   font-style: normal;
 }
 
+img {
+  max-width: 100%;
+}
+
 body {
   color: #fff;
   font-family: "HelveticaNeueCyr";
