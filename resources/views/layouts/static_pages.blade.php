@@ -39,7 +39,27 @@
 
 
   @if(Route::currentRouteName() === 'contacts')
-    <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuWuh6Wr4Kh8l6moiEpHyHPjAhLtTSthk"></script>
+    <script>
+      function initMap() {
+        var geo = new google.maps.Geocoder(),
+            center,
+            maps = Array.from(document.getElementsByClassName('googleMaps'));
+        if(maps.length > 0){
+            maps.forEach((item, i) => {
+                let mapObj = new google.maps.Map(item,{zoom : 17});
+                geo.geocode({'address' : item.getAttribute('data-location') }, function(results, status){
+                    center = results[0].geometry.location;
+                    mapObj.setCenter(center);
+                    let marker = new google.maps.Marker({
+                        map: mapObj,
+                        position: center,
+                    });
+                });
+            });
+        }
+      }
+    </script>
+    <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuWuh6Wr4Kh8l6moiEpHyHPjAhLtTSthk&callback=initMap"></script>
   @endif
   
 	<script src="{{ mix('js/main.js') }}"></script>

@@ -16282,6 +16282,10 @@ li.r-tabs-state-active a {
   color: #292929;
 }
 
+.catalog__filter-block {
+  width: 100%;
+}
+
 @media (min-width: 1025px) {
   body.compensate-for-scrollbar {
     position: static;

@@ -63308,8 +63308,8 @@ $(document).ready(function () {
         items: 5
       }
     }
-  };
-  initMap();
+  }; // initMap();
+
   initOwl($('.main-news__slider'), mainNewsSlider); //Слайдер новинок на главной
 
   var headerSlider = {
@@ -63807,31 +63807,25 @@ function initRangeSlider(obj, leftInput, rightInput) {
       });
     });
   }
-}
-
-function initMap() {
-  var geo = new google.maps.Geocoder(),
-      center,
-      maps = Array.from(document.getElementsByClassName('googleMaps'));
-
-  if (maps.length > 0) {
-    maps.forEach(function (item, i) {
-      var mapObj = new google.maps.Map(item, {
-        zoom: 17
-      });
-      geo.geocode({
-        'address': item.getAttribute('data-location')
-      }, function (results, status) {
-        center = results[0].geometry.location;
-        mapObj.setCenter(center);
-        var marker = new google.maps.Marker({
-          map: mapObj,
-          position: center
-        });
-      });
-    });
-  }
-}
+} // function initMap() {
+//     var geo = new google.maps.Geocoder(),
+//         center,
+//         maps = Array.from(document.getElementsByClassName('googleMaps'));
+//     if(maps.length > 0){
+//         maps.forEach((item, i) => {
+//             let mapObj = new google.maps.Map(item,{zoom : 17});
+//             geo.geocode({'address' : item.getAttribute('data-location') }, function(results, status){
+//                 center = results[0].geometry.location;
+//                 mapObj.setCenter(center);
+//                 let marker = new google.maps.Marker({
+//                     map: mapObj,
+//                     position: center,
+//                 });
+//             });
+//         });
+//     }
+// }
+// window.initMap = initMap;
 
 /***/ }),
 
