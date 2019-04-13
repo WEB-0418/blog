@@ -48,6 +48,8 @@ $( document ).ready(function() {
         }
     };
 
+    initMap();
+
     initOwl($('.main-news__slider'), mainNewsSlider);//Слайдер новинок на главной
 
     var headerSlider = {
@@ -531,7 +533,8 @@ function initRangeSlider(obj,leftInput,rightInput){
     }
 }
 
-function initMap(){
+
+function initMap() {
     var geo = new google.maps.Geocoder(),
         center,
         maps = Array.from(document.getElementsByClassName('googleMaps'));

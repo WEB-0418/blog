@@ -63309,6 +63309,7 @@ $(document).ready(function () {
       }
     }
   };
+  initMap();
   initOwl($('.main-news__slider'), mainNewsSlider); //Слайдер новинок на главной
 
   var headerSlider = {

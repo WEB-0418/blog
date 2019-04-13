@@ -27,11 +27,11 @@
     <div class="footer-col">
       <div class="footer-col__title">ИНФОРМАЦИЯ</div>
       <ul class="footer-col__list">
-        <li class="footer-col__list-item"><a href="/delivery">Доставка</a></li>
-        <li class="footer-col__list-item"><a href="/about">О кампании</a></li>
-        <li class="footer-col__list-item"><a href="/guarantee">Гарантия</a></li>
-        <li class="footer-col__list-item"><a href="/contacts">Контакты</a></li>
-        <li class="footer-col__list-item"><a href="#">Условия сотрудничества</a></li>
+        <li class="footer-col__list-item"><a href="{{ route('delivery') }}">Доставка</a></li>
+        <li class="footer-col__list-item"><a href="{{ route('about') }}">О кампании</a></li>
+        <li class="footer-col__list-item"><a href="{{ route('guarantee') }}">Гарантия</a></li>
+        <li class="footer-col__list-item"><a href="{{ route('contacts') }}">Контакты</a></li>
+        {{-- <li class="footer-col__list-item"><a href="#">Условия сотрудничества</a></li> --}}
       </ul>
     </div>
     <div class="footer-col">

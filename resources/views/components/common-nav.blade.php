@@ -1,7 +1,7 @@
 <div class="nav-outer">
   <div class="box">
     <nav class="main-nav">
-      <div class="main-nav__catalog">КАТАЛОГ
+      <div class="main-nav__catalog"><a href="{{ route('catalog') }}">КАТАЛОГ</a>
         <div class="main-nav__catalog-cub"></div>
         <ul class="main-nav__submenu main-nav__submenu_general">
           <li class="main-nav__submenu-item"><a class="main-nav__submenu-link" href="#">Мужские носки<i class="fas fa-chevron-right"></i></a>

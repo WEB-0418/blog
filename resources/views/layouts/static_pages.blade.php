@@ -36,6 +36,13 @@
     @include('components.forms.enter');    
     @include('components.forms.register');    
   	
+
+
+  @if(Route::currentRouteName() === 'contacts')
+    <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuWuh6Wr4Kh8l6moiEpHyHPjAhLtTSthk"></script>
+  @endif
+  
 	<script src="{{ mix('js/main.js') }}"></script>
+
   </body>
 </html>
