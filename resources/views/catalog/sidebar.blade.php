@@ -67,60 +67,98 @@
         @foreach($seasons as $season)
 
           <li class="filter-col__sort-kind-item">
-            <input class="filter-col__sort-input" type="checkbox" id="check{{$season->id}}" hidden name='seasons[]' value="{{$season->id}}">
-            <label class="filter-col__sort-kind-label" for="check{{$season->id}}">{{ $season->name }}</label>
+
+            @if (Request::has('seasons'))
+
+            <input class="filter-col__sort-input" type="checkbox" id="season{{$season->id}}" hidden name='seasons[]' value="{{$season->id}}" 
+              {{ in_array($season->id, Request::get('seasons')) ? 'checked' : null }}
+            >
+
+            @else
+
+            <input class="filter-col__sort-input" type="checkbox" id="season{{$season->id}}" hidden name='seasons[]' value="{{$season->id}}" >
+
+            @endif
+
+{{--             <input class="filter-col__sort-input" type="checkbox" id="check{{$season->id}}" hidden name='seasons[]' value="{{$season->id}}" 
+              {{ 
+                in_array(
+                  $season->id, 
+                  Request::has('seasons') 
+                  ? (Request::get('seasons') ? 'checked' : null )
+                  : []
+                )
+              }}
+            >
+ --}}
+
+            <label class="filter-col__sort-kind-label" for="season{{$season->id}}">{{ $season->name }}</label>
           </li>
 
         @endforeach
 
       </ul>
     </div>
-    {{-- <div class="filter-col__sort-kind-outer">
+    <div class="filter-col__sort-kind-outer">
       <div class="filter-col__sort-kind-title">Материал</div>
       <ul class="filter-col__sort-kind-list">
-        <li class="filter-col__sort-kind-item">
-          <input class="filter-col__sort-input" type="checkbox" id="check5" hidden>
-          <label class="filter-col__sort-kind-label" for="check5">Мульти</label>
-        </li>
-        <li class="filter-col__sort-kind-item">
-          <input class="filter-col__sort-input" type="checkbox" id="check6" hidden>
-          <label class="filter-col__sort-kind-label" for="check6">Лето</label>
-        </li>
-        <li class="filter-col__sort-kind-item">
-          <input class="filter-col__sort-input" type="checkbox" id="check7" hidden>
-          <label class="filter-col__sort-kind-label" for="check7">Весна-осень</label>
-        </li>
-        <li class="filter-col__sort-kind-item">
-          <input class="filter-col__sort-input" type="checkbox" id="check8" hidden>
-          <label class="filter-col__sort-kind-label" for="check8">Зима</label>
-        </li>
+
+        @foreach($materials as $material)
+
+          <li class="filter-col__sort-kind-item">
+
+            @if (Request::has('materials'))
+
+            <input class="filter-col__sort-input" type="checkbox" id="material{{$material->id}}" hidden name='materials[]' value="{{$material->id}}" 
+              {{ in_array($material->id, Request::get('materials')) ? 'checked' : null }}
+            >
+
+            @else
+
+            <input class="filter-col__sort-input" type="checkbox" id="material{{$material->id}}" hidden name='materials[]' value="{{$material->id}}" >
+
+            @endif
+
+            <label class="filter-col__sort-kind-label" for="material{{$material->id}}">{{ $material->name }}</label>
+          </li>
+
+        @endforeach
+
       </ul>
     </div>
+
     <div class="filter-col__sort-kind-outer">
       <div class="filter-col__sort-kind-title">Страна-производитель</div>
       <ul class="filter-col__sort-kind-list">
-        <li class="filter-col__sort-kind-item">
-          <input class="filter-col__sort-input" type="checkbox" id="check9" hidden>
-          <label class="filter-col__sort-kind-label" for="check9">Мульти</label>
-        </li>
-        <li class="filter-col__sort-kind-item">
-          <input class="filter-col__sort-input" type="checkbox" id="check10" hidden>
-          <label class="filter-col__sort-kind-label" for="check10">Лето</label>
-        </li>
-        <li class="filter-col__sort-kind-item">
-          <input class="filter-col__sort-input" type="checkbox" id="check11" hidden>
-          <label class="filter-col__sort-kind-label" for="check11">Весна-осень</label>
-        </li>
-        <li class="filter-col__sort-kind-item">
-          <input class="filter-col__sort-input" type="checkbox" id="check12" hidden>
-          <label class="filter-col__sort-kind-label" for="check12">Зима</label>
-        </li>
+
+        @foreach($producers as $producer)
+
+          <li class="filter-col__sort-kind-item">
+
+            @if (Request::has('producers'))
+
+            <input class="filter-col__sort-input" type="checkbox" id="producer{{$producer->id}}" hidden name='producers[]' value="{{$producer->id}}" 
+              {{ in_array($producer->id, Request::get('producers')) ? 'checked' : null }}
+            >
+
+            @else
+
+            <input class="filter-col__sort-input" type="checkbox" id="producer{{$producer->id}}" hidden name='producers[]' value="{{$producer->id}}" >
+
+            @endif
+
+            <label class="filter-col__sort-kind-label" for="producer{{$producer->id}}">{{ $producer->name }}</label>
+          </li>
+
+        @endforeach
+
       </ul>
     </div>
-  </div> --}}
+  {{-- </div> --}}
   <div class="filter-col__btns">
-    <button class="btn">Показать</button>
-    <button class="btn btn_white btn_border">Сбросить</button>
+    <input class="btn" type="submit" value="Показать">
+    {{-- <input class="btn btn_white btn_border" type="reset" value="Сбросить"> --}}
+    <a href="{{ route('catalog') }}" class="btn btn_white btn_border">Сбросить</a>
   </div>
 </form>
   @include ('catalog.hits')

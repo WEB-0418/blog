@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
-use App\Models\Season;
 
 class CatalogController extends Controller
 {
@@ -18,10 +17,18 @@ class CatalogController extends Controller
     		$products = $products->whereIn('season_id', $request->get('seasons'));
     	}
 
+    	if ($request->has('materials')) {
+    		$products = $products->whereIn('material_id', $request->get('materials'));
+    	}
+
+    	if ($request->has('producers')) {
+    		$products = $products->whereIn('producer_id', $request->get('producers'));
+    	}
+
 
     	return view('catalog.catalog', [
     		'products' => $products->paginate(config('my-config.productsCount')),
-    		'seasons' => Season::all()
+    		
     	]);
     }
 }

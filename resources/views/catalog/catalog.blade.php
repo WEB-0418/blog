@@ -23,7 +23,7 @@
 
 							@include ('catalog.products')
 
-							{{ $products->onEachSide(1)->links('catalog.pagination') }}
+							{{ $products->appends(Request::input())->links('catalog.pagination') }}
             
             </div>
           </div>

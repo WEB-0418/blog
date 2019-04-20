@@ -1,3 +1,7 @@
+@if (isset($test))
+	<h1>{{ $test }}</h1>
+@endif
+
 @if ($paginator->hasPages())
 
 

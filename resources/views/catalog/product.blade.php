@@ -13,6 +13,18 @@
 
   @endif
 
+  @if($product->material)
+
+    <div>{{ $product->material->name }}</div>
+
+  @endif
+
+  @if($product->producer)
+
+    <div>{{ $product->producer->name }}</div>
+
+  @endif
+
   <div class="tovar-item__title">{{ $product->name }} № {{ $product->articule }}</div>
   <div class="tovar-item__prive-row">
     {{-- <div class="tovar-item__old-price">300 руб.</div> --}}
