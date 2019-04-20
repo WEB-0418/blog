@@ -6,6 +6,13 @@
     <button class="tovar-item__favorite"></button>
     <a class="tovar-item__zoom-it" href="{{ $product->image }}" data-fancybox="tovars">Увеличить</a>
   </div>
+
+  @if($product->season)
+
+    <div>{{ $product->season->name }}</div>
+
+  @endif
+
   <div class="tovar-item__title">{{ $product->name }} № {{ $product->articule }}</div>
   <div class="tovar-item__prive-row">
     {{-- <div class="tovar-item__old-price">300 руб.</div> --}}

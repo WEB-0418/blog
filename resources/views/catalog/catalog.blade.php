@@ -7,13 +7,8 @@
 				@include ('components.common-header')
 				@include ('components.common-nav')
         
-        <div class="box">
-          <ul class="breadcrumbs">
-            <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="#"> Главная</a></li>
-            <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="#"> Каталог</a></li>
-            <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">Мужчинам</a></li>
-          </ul>
-        </div>
+        {{ Breadcrumbs::render('catalog') }}
+
         <section class="catalog">
 
         	@include ('components.fixed-busket')

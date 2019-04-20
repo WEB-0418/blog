@@ -63262,7 +63262,9 @@ if (token) {
   !*** ./resources/js/common.js ***!
   \********************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+var noUiSlider = __webpack_require__(/*! nouislider */ "./node_modules/nouislider/distribute/nouislider.js");
 
 $(document).ready(function () {
   searchSlide($('.search-cart__input'), $('.search-cart__btn'), 340); //Выпадающий поиск в шапке
@@ -63705,14 +63707,14 @@ function searchSlide(item, trigger, width) {
   });
 }
 
-function mmenuToggle(menu, icon) {
-  var $menu = menu.mmenu({
+function mmenuToggle($menu, $icon) {
+  var $menu = $menu.mmenu({
     "extensions": ["position-right", "theme-black", "border-none"],
     navbar: {
       title: '<img src="../img/logo.png" style="width: 220px" alt="Лого">'
     }
-  });
-  var $icon = icon;
+  }); // var $icon = icon;
+
   var api = $menu.data("mmenu");
   $icon.on("click", function () {
     api.open();

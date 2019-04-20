@@ -15,6 +15,7 @@
   </head>
   <body>
 
+    @include('components.mobile-menu')
 
 		@yield('content')
 

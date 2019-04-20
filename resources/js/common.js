@@ -1,5 +1,6 @@
-$( document ).ready(function() {
+const noUiSlider = require('nouislider');
 
+$( document ).ready(function() {
     searchSlide($('.search-cart__input'), $('.search-cart__btn'), 340);//Выпадающий поиск в шапке
 
     var gridProps = {
@@ -435,8 +436,9 @@ function searchSlide(item, trigger, width) {
     });
 }
 
-function mmenuToggle(menu, icon){
-    var $menu = menu.mmenu({
+function mmenuToggle($menu, $icon){
+    
+    var $menu = $menu.mmenu({
         "extensions": [
             "position-right",
             "theme-black",
@@ -446,7 +448,7 @@ function mmenuToggle(menu, icon){
             title: '<img src="../img/logo.png" style="width: 220px" alt="Лого">'
         }
     });
-    var $icon = icon;
+    // var $icon = icon;
     var api = $menu.data( "mmenu" );
     $icon.on( "click", function() {
         api.open();

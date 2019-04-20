@@ -1,5 +1,6 @@
 <div class="catalog__filter-col filter-col">
-  <div class="filter-col__title filter-col__title_first">Категории</div>
+  <form action="/catalog">
+{{--   <div class="filter-col__title filter-col__title_first">Категории</div>
   <div class="filter-col__drop-title">Мужские носки</div>
   <ul class="filter-col__drop-content">
     <li class="filter-col__drop-content-item"><a class="filter-col__drop-content-link" href="#">Носки</a></li>
@@ -58,29 +59,23 @@
         <input class="filter-col__price-input" id="leftDigit">
         <input class="filter-col__price-input" id="rightDigit">
       </div>
-    </div>
+    </div> --}}
     <div class="filter-col__sort-kind-outer">
       <div class="filter-col__sort-kind-title">Сезон</div>
       <ul class="filter-col__sort-kind-list">
-        <li class="filter-col__sort-kind-item">
-          <input class="filter-col__sort-input" type="checkbox" id="check1" hidden>
-          <label class="filter-col__sort-kind-label" for="check1">Мульти</label>
-        </li>
-        <li class="filter-col__sort-kind-item">
-          <input class="filter-col__sort-input" type="checkbox" id="check2" hidden>
-          <label class="filter-col__sort-kind-label" for="check2">Лето</label>
-        </li>
-        <li class="filter-col__sort-kind-item">
-          <input class="filter-col__sort-input" type="checkbox" id="check3" hidden>
-          <label class="filter-col__sort-kind-label" for="check3">Весна-осень</label>
-        </li>
-        <li class="filter-col__sort-kind-item">
-          <input class="filter-col__sort-input" type="checkbox" id="check4" hidden>
-          <label class="filter-col__sort-kind-label" for="check4">Зима</label>
-        </li>
+
+        @foreach($seasons as $season)
+
+          <li class="filter-col__sort-kind-item">
+            <input class="filter-col__sort-input" type="checkbox" id="check{{$season->id}}" hidden name='seasons[]' value="{{$season->id}}">
+            <label class="filter-col__sort-kind-label" for="check{{$season->id}}">{{ $season->name }}</label>
+          </li>
+
+        @endforeach
+
       </ul>
     </div>
-    <div class="filter-col__sort-kind-outer">
+    {{-- <div class="filter-col__sort-kind-outer">
       <div class="filter-col__sort-kind-title">Материал</div>
       <ul class="filter-col__sort-kind-list">
         <li class="filter-col__sort-kind-item">
@@ -122,11 +117,12 @@
         </li>
       </ul>
     </div>
-  </div>
+  </div> --}}
   <div class="filter-col__btns">
     <button class="btn">Показать</button>
     <button class="btn btn_white btn_border">Сбросить</button>
   </div>
+</form>
   @include ('catalog.hits')
   @include ('catalog.promo')
 
