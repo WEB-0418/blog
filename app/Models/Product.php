@@ -18,9 +18,9 @@ class Product extends Model
 
     }
 
- 	public function branch()  {
+ 	public function brand()  {
 
-    	return $this->belongsTo(Branch::class);
+    	return $this->belongsTo(Brand::class);
 
     }
 

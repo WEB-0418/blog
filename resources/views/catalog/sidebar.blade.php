@@ -1,6 +1,6 @@
 <div class="catalog__filter-col filter-col">
   <form action="/catalog">
-{{--   <div class="filter-col__title filter-col__title_first">Категории</div>
+  <div class="filter-col__title filter-col__title_first">Категории</div>
   <div class="filter-col__drop-title">Мужские носки</div>
   <ul class="filter-col__drop-content">
     <li class="filter-col__drop-content-item"><a class="filter-col__drop-content-link" href="#">Носки</a></li>
@@ -54,12 +54,15 @@
   <div class="filter-col__price-range">
     <div class="filter-col__range-block">
       <div class="filter-col__price-title">Цена</div>
-      <div id="range"></div>
+      <div id="range" 
+        data-min="{{ $products->pluck('price')->min() }}" 
+        data-max="{{ $products->pluck('price')->max() }}"
+      ></div>
       <div class="filter-col__price-inputs-row">
         <input class="filter-col__price-input" id="leftDigit">
         <input class="filter-col__price-input" id="rightDigit">
       </div>
-    </div> --}}
+    </div>
     <div class="filter-col__sort-kind-outer">
       <div class="filter-col__sort-kind-title">Сезон</div>
       <ul class="filter-col__sort-kind-list">
@@ -154,7 +157,7 @@
 
       </ul>
     </div>
-  {{-- </div> --}}
+  </div>
   <div class="filter-col__btns">
     <input class="btn" type="submit" value="Показать">
     {{-- <input class="btn btn_white btn_border" type="reset" value="Сбросить"> --}}

@@ -63752,12 +63752,15 @@ function initRangeSlider(obj, leftInput, rightInput) {
     var input1 = rightInput;
     var inputs = [input0, input1];
     noUiSlider.create(slider, {
-      start: [1000, 5000],
+      start: [Math.floor(+slider.dataset.min), +slider.dataset.max + 1],
       connect: true,
       range: {
-        'min': 1000,
-        'max': 5000
-      }
+        'min': Math.floor(+slider.dataset.min),
+        'max': +slider.dataset.max + 1
+      } // format: wNumb({
+      //     decimals: 0
+      // }),
+
     });
     slider.noUiSlider.on('update', function (values, handle) {
       inputs[handle].value = Math.round(values[handle]);

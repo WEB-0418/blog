@@ -8,6 +8,7 @@ use App\Models\NewsCategory;
 use App\Models\Season;
 use App\Models\Material;
 use App\Models\Producer;
+
 use Carbon\Carbon;
 
 class AppServiceProvider extends ServiceProvider
