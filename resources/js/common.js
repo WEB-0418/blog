@@ -478,11 +478,11 @@ function initRangeSlider(obj,leftInput,rightInput){
         var input1 = rightInput;
         var inputs = [input0, input1];
         noUiSlider.create(slider, {
-            start: [Math.floor(+slider.dataset.min), +slider.dataset.max + 1],
+            start: [+slider.dataset.start, +slider.dataset.finish],
             connect: true,
             range: {
-                'min': Math.floor(+slider.dataset.min),
-                'max': +slider.dataset.max + 1
+                'min': +slider.dataset.min,
+                'max': +slider.dataset.max
             },
             // format: wNumb({
             //     decimals: 0
@@ -490,6 +490,15 @@ function initRangeSlider(obj,leftInput,rightInput){
         });
         slider.noUiSlider.on('update', function( values, handle ) {
             inputs[handle].value = Math.round(values[handle]);
+        });
+        slider.noUiSlider.on('change', function( values, handle ) {
+            console.log(inputs);
+            console.log(slider.noUiSlider.get());
+            const minPrice = slider.noUiSlider.get()[0];
+            const maxPrice = slider.noUiSlider.get()[1];
+            window.location.search = window.location.search.includes('?') 
+                ? `min_price=${minPrice}&max_price=${maxPrice}` 
+                : `?min_price=${minPrice}&max_price=${maxPrice}`;
         });
         function setSliderHandle(i, value) {
             var r = [null,null];

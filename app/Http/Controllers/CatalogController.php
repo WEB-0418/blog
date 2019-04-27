@@ -30,6 +30,10 @@ class CatalogController extends Controller
         $brand_ids = array_values($products->pluck('brand_id')->unique()->toArray());
     	$color_ids = array_values($products->pluck('color_id')->unique()->toArray());
         $sizes = $products->pluck('size')->unique();
+        $minPrice = $products->pluck('price')->min();
+        $maxPrice = $products->pluck('price')->max();
+        $start = $minPrice;
+        $finish = $maxPrice;
 
         if ($request->has('color')) {
             $products = $products->where('color_id', $request->get('color'));
@@ -43,11 +47,38 @@ class CatalogController extends Controller
             $products = $products->where('size', $request->get('size'));
         }
 
+        if ($request->has('sorting')) {
+            switch($request->get('sorting')) {
+                case 'price_asc': 
+                    $products = $products->orderBy('price', 'ASC');
+                    break;
+                case 'price_desc':
+                    $products = $products->orderBy('price', 'desc');
+                    break;
+                case 'popularity':
+                    //todo: todo!
+                    break;
+            }
+        }
+
+        if ($request->has('min_price') && $request->has('max_price')) {
+            $products = $products->whereBetween(
+                'price', 
+                [$request->get('min_price'), $request->get('max_price')]
+            );
+            $start = $request->get('min_price');
+            $finish = $request->get('max_price');
+        }
+
     	return view('catalog.catalog', [
     		'products' => $products->paginate(config('my-config.productsCount')),
             'brands' => Brand::whereIn('id', $brand_ids)->get(),
             'colors' => Color::whereIn('id', $color_ids)->get(),
             'sizes' => $sizes,
+            'minPrice' => $minPrice,
+            'maxPrice' => $maxPrice,
+            'start' => $start,
+            'finish' => $finish
     	]);
     }
 }

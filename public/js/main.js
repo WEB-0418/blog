@@ -63328,6 +63328,22 @@ function filterProducts(e) {
   }
 }
 
+document.querySelector('#sort').addEventListener('change', function (e) {
+  var selectedValue = e.target.value;
+  var re = new RegExp("[&|?]sorting=\\w+");
+  var requestString = '';
+
+  if ('sorting' in requestParams) {
+    requestString += window.location.search.replace(re, "&sorting=".concat(selectedValue));
+  } else {
+    requestString = "".concat(window.location.search, "&sorting=").concat(selectedValue);
+  }
+
+  window.location.search = requestString;
+}); // document.querySelector('#range').addEventListener('start', function (e) {
+// 	console.log(e);
+// })
+
 /***/ }),
 
 /***/ "./resources/js/common.js":
@@ -63825,11 +63841,11 @@ function initRangeSlider(obj, leftInput, rightInput) {
     var input1 = rightInput;
     var inputs = [input0, input1];
     noUiSlider.create(slider, {
-      start: [Math.floor(+slider.dataset.min), +slider.dataset.max + 1],
+      start: [+slider.dataset.start, +slider.dataset.finish],
       connect: true,
       range: {
-        'min': Math.floor(+slider.dataset.min),
-        'max': +slider.dataset.max + 1
+        'min': +slider.dataset.min,
+        'max': +slider.dataset.max
       } // format: wNumb({
       //     decimals: 0
       // }),
@@ -63837,6 +63853,13 @@ function initRangeSlider(obj, leftInput, rightInput) {
     });
     slider.noUiSlider.on('update', function (values, handle) {
       inputs[handle].value = Math.round(values[handle]);
+    });
+    slider.noUiSlider.on('change', function (values, handle) {
+      console.log(inputs);
+      console.log(slider.noUiSlider.get());
+      var minPrice = slider.noUiSlider.get()[0];
+      var maxPrice = slider.noUiSlider.get()[1];
+      window.location.search = window.location.search.includes('?') ? "min_price=".concat(minPrice, "&max_price=").concat(maxPrice) : "?min_price=".concat(minPrice, "&max_price=").concat(maxPrice);
     });
     inputs.forEach(function (input, handle) {
       input.addEventListener('change', function () {

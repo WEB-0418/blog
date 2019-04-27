@@ -37,10 +37,10 @@
     </div>
     <div class="catalot__select-outer catalot__select-outer_black">
       <div class="catalog__select-title">Сортировать</div><i class="fas fa-angle-down"></i>
-      <select class="catalot__select" name="sort">
-        <option>По популярности</option>
-        <option>От дешевых к дорогим</option>
-        <option>От дорогих к дешевым</option>
+      <select class="catalot__select" name="sorting" id='sort'>
+        <option value="popularity" {{ ('popularity' == Request::get('sorting')) ? 'selected' : '' }}>По популярности</option>
+        <option value="price_asc" {{ ('price_asc' == Request::get('sorting')) ? 'selected' : '' }}>От дешевых к дорогим</option>
+        <option value="price_desc" {{ ('price_desc' == Request::get('sorting')) ? 'selected' : '' }}>От дорогих к дешевым</option>
       </select>
     </div>
   </div>

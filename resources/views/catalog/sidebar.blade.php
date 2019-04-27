@@ -55,8 +55,10 @@
     <div class="filter-col__range-block">
       <div class="filter-col__price-title">Цена</div>
       <div id="range" 
-        data-min="{{ $products->pluck('price')->min() }}" 
-        data-max="{{ $products->pluck('price')->max() }}"
+        data-min="{{ $minPrice }}" 
+        data-max="{{ $maxPrice }}"
+        data-start="{{ $start }}"
+        data-finish="{{ $finish }}"
       ></div>
       <div class="filter-col__price-inputs-row">
         <input class="filter-col__price-input" id="leftDigit">

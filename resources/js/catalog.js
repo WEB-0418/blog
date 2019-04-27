@@ -74,3 +74,22 @@ function filterProducts(e) {
 }
 
 
+document.querySelector('#sort').addEventListener('change', function (e) {
+	const selectedValue = e.target.value;
+	const re = new RegExp(`[\&|\?]sorting=\\w+`)
+
+	let requestString = '';
+
+	if ('sorting' in requestParams) {
+		requestString += window.location.search.replace(re, `\&sorting=${selectedValue}`);
+	} else {
+		requestString = `${window.location.search}&sorting=${selectedValue}`;
+	}
+
+	window.location.search = requestString;
+})
+
+
+// document.querySelector('#range').addEventListener('start', function (e) {
+// 	console.log(e);
+// })
