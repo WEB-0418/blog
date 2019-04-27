@@ -19,7 +19,9 @@
 
 		@yield('content')
 
-
+    <script>
+      window.requestParams = {!! json_encode(Request::all()) !!}
+    </script>
   	
 	  <script src="{{ mix('js/main.js') }}"></script>
   </body>

@@ -26,5 +26,6 @@ Route::get('/guarantee', 'GuaranteeController@show')->name('guarantee');
 Route::get('/contacts', 'ContactsController@show')->name('contacts');
 
 Route::get('/catalog', 'CatalogController@index')->name('catalog');
+Route::get('/catalog/api', 'APICatalogController@index');
 
 

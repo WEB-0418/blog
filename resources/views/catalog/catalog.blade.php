@@ -32,6 +32,12 @@
         @include ('catalog.description')
 
       </div>
-		@include ('components.footer')
+
+		  @include ('components.footer')
+
+      <script>
+        window.products = {!! $products->toJson() !!}.data
+      </script>
+
     </div>
 @endsection

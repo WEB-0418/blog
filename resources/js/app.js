@@ -49,3 +49,5 @@ require('slick-carousel');
 
 require('./common.js');
 
+require('./catalog.js');
+

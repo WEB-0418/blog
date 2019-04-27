@@ -63197,6 +63197,8 @@ __webpack_require__(/*! slick-carousel */ "./node_modules/slick-carousel/slick/s
 
 __webpack_require__(/*! ./common.js */ "./resources/js/common.js");
 
+__webpack_require__(/*! ./catalog.js */ "./resources/js/catalog.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -63254,6 +63256,77 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/catalog.js":
+/*!*********************************!*\
+  !*** ./resources/js/catalog.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// const colors = document.querySelector('#color');
+// const brands = document.querySelector('#brand');
+// const sizes = document.querySelector('#size');
+// [colors, brands, sizes].forEach(element => {
+// 	element.addEventListener('change', )
+// })
+// const getData = requestParams;
+// colors.addEventListener('change', function (e) {
+// 	if (selectedValue) {
+// 		// console.log(products.filter(product => product.color_id == selectedValue));
+// 		// fetch('/catalog/api', {
+// 		// 	qs: Object.assign(requestParams, {color: selectedValue})
+// 		// })
+// 		// .then(response => response.json())
+// 		// .then(data => {console.log(data)})
+// 		// $.ajax({
+// 		// 	url: '/catalog/api',
+// 		// 	data: Object.assign(requestParams, {color: selectedValue}),
+// 		// 	success (data) {
+// 		// 		console.log(data);
+// 		// 	}
+// 		// })
+// 		let requestString = '';
+// 		if ('color' in requestParams) {
+// 			requestString += window.location.search.replace(/color=\d+/, `color=${selectedValue}`);
+// 		} else {
+// 			requestString = `${window.location.search}&color=${selectedValue}`;
+// 		}
+// 		window.location.search = requestString;
+// 	} else {
+// 		window.location.search = window.location.search.replace(/\&color=\d+/, ``);
+// 	}
+// })
+var selects = ['color', 'brand', 'size'];
+document.addEventListener('change', function (e) {
+  if (selects.includes(e.target.id)) {
+    filterProducts(e);
+  }
+});
+
+function filterProducts(e) {
+  // debugger;
+  var element = e.target;
+  var criteria = element.id;
+  var selectedValue = element.value;
+  var re = new RegExp("[&|?]".concat(criteria, "=[\\d|\\w]+"));
+
+  if (selectedValue) {
+    var requestString = '';
+
+    if (criteria in requestParams) {
+      requestString += window.location.search.replace(re, "&".concat(criteria, "=").concat(selectedValue));
+    } else {
+      requestString = "".concat(window.location.search, "&").concat(criteria, "=").concat(selectedValue);
+    }
+
+    window.location.search = requestString;
+  } else {
+    window.location.search = window.location.search.replace(re, "");
+  }
+}
 
 /***/ }),
 

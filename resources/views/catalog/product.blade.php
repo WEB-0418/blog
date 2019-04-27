@@ -7,7 +7,7 @@
     <a class="tovar-item__zoom-it" href="{{ $product->image }}" data-fancybox="tovars">Увеличить</a>
   </div>
 
-  @if($product->season)
+{{--   @if($product->season)
 
     <div>{{ $product->season->name }}</div>
 
@@ -23,7 +23,9 @@
 
     <div>{{ $product->producer->name }}</div>
 
-  @endif
+  @endif --}}
+
+  <div>{{ $product->color_id }}</div>
 
   <div class="tovar-item__title">{{ $product->name }} № {{ $product->articule }}</div>
   <div class="tovar-item__prive-row">
