@@ -63178,6 +63178,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // window
 // require('./libs.min.js');
 
 
+var page = document.body.dataset.page;
+
 __webpack_require__(/*! owl.carousel */ "./node_modules/owl.carousel/dist/owl.carousel.js");
 
 __webpack_require__(/*! @fancyapps/fancybox */ "./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js");
@@ -63197,7 +63199,9 @@ __webpack_require__(/*! slick-carousel */ "./node_modules/slick-carousel/slick/s
 
 __webpack_require__(/*! ./common.js */ "./resources/js/common.js");
 
-__webpack_require__(/*! ./catalog.js */ "./resources/js/catalog.js");
+if (page === 'catalog') {
+  __webpack_require__(/*! ./catalog.js */ "./resources/js/catalog.js");
+}
 
 /***/ }),
 

@@ -34,3 +34,11 @@ Breadcrumbs::for('catalog', function ($trail) {
     $trail->parent('home');
     $trail->push('Каталог', route('catalog'));
 });
+
+// Home > Product
+Breadcrumbs::for('product', function ($trail, $product) {
+    $trail->parent('catalog');
+    // $trail->push('Каталог', route('catalog'));
+    $trail->push($product->name);
+});
+

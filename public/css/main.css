@@ -14300,7 +14300,7 @@ footer {
   display: inline-block;
 }
 
-.breadcrumbs__link:hover {
+a.breadcrumbs__link:hover {
   color: #ff3333;
 }
 

@@ -13,8 +13,8 @@
 
     <title>Noski</title>
   </head>
-  <body>
-    
+  <body data-page={{ Route::currentRouteName() }}>
+
     @include ('components.preloader')
     @include('components.mobile-menu')
 

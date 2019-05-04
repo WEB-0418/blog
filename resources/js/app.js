@@ -35,6 +35,8 @@ require('./bootstrap');
 
 // require('./libs.min.js');
 
+const page = document.body.dataset.page;
+
 require('owl.carousel');
 require('@fancyapps/fancybox');
 require('hamburgers');
@@ -45,9 +47,11 @@ require('responsive-tabs');
 // require('app/vendor/css/preloader.css');
 require('slick-carousel');
 
-
-
 require('./common.js');
 
-require('./catalog.js');
+if (page === 'catalog') {
+	require('./catalog.js');
+}
+
+
 

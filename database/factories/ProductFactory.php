@@ -3,9 +3,40 @@
 use Faker\Generator as Faker;
 
 $factory->define(App\Models\Product::class, function (Faker $faker) {
+
+	$names = [
+		'Товар 1',
+		'Товар 2',
+		'Товар 3',
+		'Товар 4',
+		'Товар 5',
+		'Товар 6',
+		'Товар 7',
+		'Товар 8',
+		'Товар 9',
+		'Товар 10',
+		'Товар 11',
+		'Товар 12',
+		'Товар 13',
+		'Товар 14',
+		'Товар 15',
+		'Товар 16',
+		'Товар 17',
+		'Товар 18',
+		'Товар 19',
+		'Товар 20',
+		'Товар 21',
+		'Товар 22',
+		'Товар 23',
+		'Товар 24',
+		'Товар 25',
+	];
+
+
     return [
         'articule'=> $faker->regexify('[0-9]{3}-[A-Z][0-9]{4}'), 
-        'name' => $faker->sentence($nbWords = 2, $variableNbWords = true),
+        // 'name' => $faker->sentence($nbWords = 2, $variableNbWords = true),
+        'name' => $faker->randomElement($names),
         'price' => $faker->numberBetween(100, 1000)/100,
         'is_present' => $faker->boolean($chanceOfGettingTrue = 80),
         'size' => $faker->randomElement($array = ['XS','S','M','L','XL','XXL']),
