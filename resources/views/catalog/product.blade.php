@@ -25,9 +25,9 @@
 
   @endif --}}
 
-  <div>{{ $product->color_id }}</div>
+  {{-- <div>{{ $product->color_id }}</div> --}}
 
-  <div class="tovar-item__title">{{ $product->name }} № {{ $product->articule }}</div>
+  <a href="{{ route('product', ['id' => $product->id]) }}" class="tovar-item__title">{{ $product->name }} № {{ $product->articule }}</a>
   <div class="tovar-item__prive-row">
     {{-- <div class="tovar-item__old-price">300 руб.</div> --}}
     <div class="tovar-item__new-price">{{ $product->price }} руб.</div>

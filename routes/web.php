@@ -29,3 +29,4 @@ Route::get('/catalog', 'CatalogController@index')->name('catalog');
 Route::get('/catalog/api', 'APICatalogController@index');
 
 
+Route::get('/product/{id}', 'ProductController@index')->name('product');

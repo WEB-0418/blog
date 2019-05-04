@@ -14,7 +14,8 @@
     <title>Noski</title>
   </head>
   <body>
-
+    
+    @include ('components.preloader')
     @include('components.mobile-menu')
 
 		@yield('content')
