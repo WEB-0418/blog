@@ -6,7 +6,9 @@
     @foreach($news as $n)
 
       <div class="news-block__item news-item">
-        <div class="news-item__img"><img src="{{ $n->img }}"></div>
+        <div class="news-item__img">
+          <img src="{{ strpos($n->img, 'http') === 0 ? $n->img : "/storage/" . $n->img }}">
+        </div>
         <div class="news-item__date">{{ $n->date }}</div>
           <a class="news-item__title" href="{{ route('article', ['slug' => $n->slug]) }}">{{ $n->title }}</a>
         <div class="news-item__note">{{ Str::limit($n->content, 100) }}</div>

@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 
 
@@ -30,3 +28,8 @@ Route::get('/catalog/api', 'APICatalogController@index');
 
 
 Route::get('/product/{id}', 'ProductController@index')->name('product');
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

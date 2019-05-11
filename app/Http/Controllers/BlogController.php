@@ -18,7 +18,7 @@ class BlogController extends Controller
     public function index()
     {
 
-    	$news = News::paginate(12);
+    	$news = News::orderBy('created_at', 'desc')->paginate(12);
         foreach ($news as $item) {
             $item->date = $this->formattedDate($item->created_at);
         }

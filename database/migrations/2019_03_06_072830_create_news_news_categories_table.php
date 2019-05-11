@@ -23,7 +23,7 @@ class CreateNewsNewsCategoriesTable extends Migration
             $table->unsignedBigInteger('news_id');  
                 //->after('category_id')  не работает,
                 // применяется только при модифицируей миграции 
-            $table->unsignedBigInteger('category_id')->index();
+            $table->unsignedBigInteger('news_category_id')->index();
             // или $table->index('category_id');
 
             $table->timestamps();

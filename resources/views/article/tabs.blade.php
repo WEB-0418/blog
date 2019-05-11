@@ -9,10 +9,10 @@
       @foreach($latestNews as $latestArticle)
       
         <a class="news-block__item news-item" href="{{ route('article', ['slug' => $latestArticle->slug]) }}">
-          <div class="news-item__img"><img src="{{ $latestArticle->img }}" alt="{{ $latestArticle->title }}"></div>
+          <div class="news-item__img"><img src="{{ strpos($latestArticle->img, 'http') === 0 ? $latestArticle->img : "/storage/" . $latestArticle->img }}" alt="{{ $latestArticle->title }}"></div>
           <div class="news-item__date">{{ $latestArticle->date ?? '' }}</div>
           <div class="news-item__title">{{ $latestArticle->title }}</div>
-          <div class="news-item__note">{{ $latestArticle->content }}</div>
+          <div class="news-item__note">{!! $latestArticle->content !!}</div>
         </a>
 
       @endforeach
@@ -24,10 +24,10 @@
       @foreach($popularNews as $popularArticle)
       
         <a class="news-block__item news-item" href="{{ route('article', ['slug' => $popularArticle->slug]) }}">
-          <div class="news-item__img"><img src="{{ $popularArticle->img }}" alt="{{ $popularArticle->title }}"></div>
+          <div class="news-item__img"><img src="{{ strpos($popularArticle->img, 'http') === 0 ? $popularArticle->img : "/storage/" . $popularArticle->img }}" alt="{{ $popularArticle->title }}"></div>
           <div class="news-item__date">{{ $popularArticle->date ?? '' }}</div>
           <div class="news-item__title">{{ $popularArticle->title }}</div>
-          <div class="news-item__note">{{ $popularArticle->content }}</div>
+          <div class="news-item__note">{!! $popularArticle->content !!}</div>
         </a>
 
       @endforeach
