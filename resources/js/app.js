@@ -53,6 +53,8 @@ if (page === 'catalog') {
 	require('./catalog.js');
 } else if (page === 'product') {
 	require('./product.js');
+} else if (page === 'busket') {
+	require('./busket.js')
 }
 
 

@@ -64,7 +64,7 @@
                             <li class="tovar-block__color-item 
                               {{ $product->color->id === $color->id ? 'tovar-block__color-item_active' : '' }}
                               ">
-                              <div class="tovar-block__color-item-inner" data-color="{{ $color->name }}">
+                              <div class="tovar-block__color-item-inner" data-color="{{ $color->id }}">
                                 {{ $color->name }}<span class="tovar-block__color-rectangle" style="background-color: {{ $color->hex }}"></span>
                               </div>
                             </li>
@@ -84,7 +84,8 @@
 
                       </select>
                     </div>
-                    <button class="btn tovar-block__add-to-cart">Добавить в корзину</button>
+                    <a href="{{ route('busket', ['productId' => $product->id]) }}" 
+                      class="btn tovar-block__add-to-cart" id="addProduct">Добавить в корзину</a>
                     <ul class="tovar-block__props">
                       <li class="tovar-block__prop"><span>Бренд:</span>{{ $product->brand->name }}</li>
                       <li class="tovar-block__prop"><span>Сезон:</span>{{ $product->season->name }}</li>

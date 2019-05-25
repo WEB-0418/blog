@@ -28,7 +28,7 @@ Route::get('/catalog/api', 'APICatalogController@index');
 
 
 Route::get('/product/{id}', 'ProductController@index')->name('product');
-
+Route::get('/product/{productId}/busket', 'BusketController@index')->name('busket');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

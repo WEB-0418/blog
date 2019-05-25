@@ -61,3 +61,11 @@ function showProducts(products) {
       </div>`).appendTo('.tovar-block__recently');
 		}
 }
+
+document.querySelector('#addProduct').addEventListener('click', function () {
+	localStorage.newProduct = JSON.stringify({
+		color: document.querySelector('.tovar-block__color-item-inner').dataset.color,
+		size: document.querySelector('.tovar-block__size').value,
+		id: myData.product,
+	});
+})

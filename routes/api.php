@@ -18,5 +18,7 @@ use Illuminate\Http\Request;
 // });
 
 Route::get('/product', 'ProductController@getData');
+Route::get('/product/busket', 'ProductController@forBusket');
+Route::get('/order', 'OrderController@create');
 
 

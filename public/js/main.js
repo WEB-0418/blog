@@ -63203,6 +63203,8 @@ if (page === 'catalog') {
   __webpack_require__(/*! ./catalog.js */ "./resources/js/catalog.js");
 } else if (page === 'product') {
   __webpack_require__(/*! ./product.js */ "./resources/js/product.js");
+} else if (page === 'busket') {
+  __webpack_require__(/*! ./busket.js */ "./resources/js/busket.js");
 }
 
 /***/ }),
@@ -63262,6 +63264,49 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/busket.js":
+/*!********************************!*\
+  !*** ./resources/js/busket.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+if ('newProduct' in localStorage && localStorage.newProduct) {
+  var newProduct = JSON.parse(localStorage.newProduct);
+  var busketProducts = [];
+
+  if (localStorage.busket) {
+    busketProducts = JSON.parse(localStorage.busket);
+  }
+
+  busketProducts.push(newProduct);
+  localStorage.busket = JSON.stringify(busketProducts);
+  $.ajax({
+    url: '/api/product/busket',
+    data: {
+      products: busketProducts
+    },
+    success: function success(data) {
+      console.log(data);
+    },
+    error: function error() {}
+  });
+  localStorage.newProduct = '';
+}
+
+document.querySelector('#createOrder').addEventListener('click', function () {
+  $.ajax({
+    url: '/api/order',
+    data: {
+      products: JSON.parse(localStorage.busket)
+    },
+    success: function success() {},
+    error: function error() {}
+  });
+});
 
 /***/ }),
 
@@ -63988,6 +64033,14 @@ function showProducts(products) {
     $("<div class=\"tovar-block__recently-item tovar-item\">\n      \t<div class=\"tovar-item__img\">\n      \t\t<img src=\"".concat(product.image, "\">\n        \t<button class=\"tovar-item__favorite\"></button>\n        \t<a class=\"tovar-item__zoom-it\" href=\"").concat(product.image, "\" data-fancybox>\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0442\u044C</a>\n      \t</div>\n      \t<div class=\"tovar-item__title\">").concat(product.name, "\"").concat(product.brand.name, "\" \u2116").concat(product.articule, "</div>\n      \t<div class=\"tovar-item__prive-row\">\n          <div class=\"tovar-item__old-price\">").concat(product.price, " \u0440\u0443\u0431.</div>\n          <div class=\"tovar-item__new-price\">").concat(product.price, " \u0440\u0443\u0431.</div>\n      \t</div>\n      \t<div class=\"tover-item__size-row\">\u0420\u0430\u0437\u043C\u0435\u0440\u043D\u044B\u0439 \u0440\u044F\u0434: ").concat(product.size, "</div>\n      </div>")).appendTo('.tovar-block__recently');
   }
 }
+
+document.querySelector('#addProduct').addEventListener('click', function () {
+  localStorage.newProduct = JSON.stringify({
+    color: document.querySelector('.tovar-block__color-item-inner').dataset.color,
+    size: document.querySelector('.tovar-block__size').value,
+    id: myData.product
+  });
+});
 
 /***/ }),
 

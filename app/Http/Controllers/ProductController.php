@@ -36,7 +36,25 @@ class ProductController extends Controller
         $productsId = $request->get('products');
 
         return response()->json([
-            'products' => Product::with('brand')->whereIn('id', $productsId)->get()
+            'products' => Product::with('brand', 'color')->whereIn('id', $productsId)->get()
         ]);
     }
+
+    public function forBusket(Request $request)
+    {
+        $rawProducts = collect($request->get('products'));
+        $products = $rawProducts->map(function($rp){
+            $name = Product::find($rp['id'])->name;
+            return Product::where('name', $name)
+                        ->where('color_id', $rp['color'])
+                        ->where('size', $rp['size'])
+                        ->first();
+        });
+
+        return response()->json([
+            'products' => $products
+        ]);
+    }
+
+    
 }
