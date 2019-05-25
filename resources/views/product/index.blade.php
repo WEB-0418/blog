@@ -8,8 +8,7 @@
 		@include ('components.common-header')
 		@include ('components.common-nav')
         
-        {{ Breadcrumbs::render('product', $product) }}
-        
+    {{ Breadcrumbs::render('product', $product) }}        
 
         <section class="tovar-card">
           <div class="box">
@@ -117,9 +116,9 @@
 
     </div>	
 
-    @include('components.forms.calculate');    
-    @include('components.forms.enter');    
-    @include('components.forms.register');    
+    @include('components.forms.calculate')  
+    @include('components.forms.enter') 
+    @include('components.forms.register')
 
 
 @endsection

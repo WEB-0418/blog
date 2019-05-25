@@ -63201,6 +63201,8 @@ __webpack_require__(/*! ./common.js */ "./resources/js/common.js");
 
 if (page === 'catalog') {
   __webpack_require__(/*! ./catalog.js */ "./resources/js/catalog.js");
+} else if (page === 'product') {
+  __webpack_require__(/*! ./product.js */ "./resources/js/product.js");
 }
 
 /***/ }),
@@ -63934,6 +63936,61 @@ function initRangeSlider(obj, leftInput, rightInput) {
 
 /***/ }),
 
+/***/ "./resources/js/product.js":
+/*!*********************************!*\
+  !*** ./resources/js/product.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  var storageData = []; //сюда будем вытаскивать данные из хранилища и писать этот массив в хранилище
+
+  if (localStorage.getItem('data') !== null) //проверяем есть ли что-то в хранилище
+    {
+      storageData = JSON.parse(localStorage['data']); //забираем данные из хранилища
+
+      $.ajax({
+        url: '/api/product',
+        data: {
+          products: storageData
+        },
+        success: function success(data) {
+          // console.log(products);
+          showProducts(data.products);
+        },
+        error: function error() {
+          console.error('ERROR!!', arguments);
+        }
+      });
+
+      if (storageData.length === 6) {
+        storageData.shift();
+      }
+
+      if (!storageData.includes(myData.product)) {
+        storageData.push(myData.product);
+      }
+    } else {
+    $('.tovar-block__recently-title').hide(); //скрываем надпись "недавно просмотренные товары"
+
+    storageData.push(myData.product);
+  }
+
+  localStorage['data'] = JSON.stringify(storageData);
+});
+
+function showProducts(products) {
+  $('.tovar-block__recently-title').show(); //показываем надпись "недавно просмотренные товары"
+
+  for (var i = 0; i < products.length; i++) {
+    var product = products[i];
+    $("<div class=\"tovar-block__recently-item tovar-item\">\n      \t<div class=\"tovar-item__img\">\n      \t\t<img src=\"".concat(product.image, "\">\n        \t<button class=\"tovar-item__favorite\"></button>\n        \t<a class=\"tovar-item__zoom-it\" href=\"").concat(product.image, "\" data-fancybox>\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0442\u044C</a>\n      \t</div>\n      \t<div class=\"tovar-item__title\">").concat(product.name, "\"").concat(product.brand.name, "\" \u2116").concat(product.articule, "</div>\n      \t<div class=\"tovar-item__prive-row\">\n          <div class=\"tovar-item__old-price\">").concat(product.price, " \u0440\u0443\u0431.</div>\n          <div class=\"tovar-item__new-price\">").concat(product.price, " \u0440\u0443\u0431.</div>\n      \t</div>\n      \t<div class=\"tover-item__size-row\">\u0420\u0430\u0437\u043C\u0435\u0440\u043D\u044B\u0439 \u0440\u044F\u0434: ").concat(product.size, "</div>\n      </div>")).appendTo('.tovar-block__recently');
+  }
+}
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -63952,8 +64009,8 @@ function initRangeSlider(obj, leftInput, rightInput) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! d:\OSPanel\domains\testLaravel\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! d:\OSPanel\domains\testLaravel\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! c:\OSPanel\domains\blog\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! c:\OSPanel\domains\blog\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

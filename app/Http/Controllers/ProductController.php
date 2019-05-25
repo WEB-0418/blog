@@ -30,4 +30,13 @@ class ProductController extends Controller
     		'sizes' => $sizes,
     	]);
     }
+
+    public function getData(Request $request)
+    {
+        $productsId = $request->get('products');
+
+        return response()->json([
+            'products' => Product::with('brand')->whereIn('id', $productsId)->get()
+        ]);
+    }
 }

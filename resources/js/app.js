@@ -51,6 +51,8 @@ require('./common.js');
 
 if (page === 'catalog') {
 	require('./catalog.js');
+} else if (page === 'product') {
+	require('./product.js');
 }
 
 
