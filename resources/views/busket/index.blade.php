@@ -132,36 +132,8 @@
                   </div>
                 </div>
               </div>
-              <div class="basket_tovars">
-{{--                 <div class="basket__tovar-item">
-                  <div class="basket__tovar-desc">
-                    <div class="basket__tovar-img"><img src="img/snickers-workwear-flexiwork-camo-noski-2-pary.png">
-                      <button class="basket__favorite"></button>
-                    </div>
-                    <div class="basket__desc-text">
-                      <!--Для отсутствующего товара класс basket__out-of-stock-->
-                      <ul class="basket__desc-items basket__in-stock">
-                        <li class="basket__desc-item">Носки мужские короткие "Divi" № 478-C3051</li>
-                        <li class="basket__desc-item">Цвет: белый</li>
-                        <li class="basket__desc-item">Размер: 38-39</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="basket__price">
-                    <div class="basket__new-price">150 руб.</div>
-                    <div class="basket__old-price">300 руб.</div>
-                  </div>
-                  <div class="basket__countblock">
-                    <div class="basket__countblock-inner">
-                      <div class="basket__counter minus">-</div>
-                      <input class="basket__input-counter" value="2" data-price="150">
-                      <div class="basket__counter plus">+</div>
-                    </div>
-                  </div>
-                  <div class="basket__total">
-                    <input class="basket__total-input" value="150 руб." readonly>
-                  </div>
-                </div> --}}
+              <div class="basket_tovars" id="products">
+                {{-- todo: insert products with js --}}
               </div>
               <div class="basket__super-total">
                 <button class="btn basket__checkout" id="createOrder">Оформить заказ</button>

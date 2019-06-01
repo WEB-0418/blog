@@ -45,7 +45,8 @@ class ProductController extends Controller
         $rawProducts = collect($request->get('products'));
         $products = $rawProducts->map(function($rp){
             $name = Product::find($rp['id'])->name;
-            return Product::where('name', $name)
+            return Product::with('color')
+                        ->where('name', $name)
                         ->where('color_id', $rp['color'])
                         ->where('size', $rp['size'])
                         ->first();

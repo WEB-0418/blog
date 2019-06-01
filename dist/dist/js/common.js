@@ -221,10 +221,10 @@ function totalCount () {
     var result = arr.reduce(function(sum, current) {
         return sum + +$(current).val().replace(/[^0-9]/gim,'');
     }, 0);
-    $('#goodsTotal').val(result + " руб.");
-    $('#delTotal').val(delivery + " руб.");
+    $('#goodsTotal').val(result + " $");
+    $('#delTotal').val(delivery + " $");
     result +=  delivery;
-    $('#superTotal').val(result + " руб.");
+    $('#superTotal').val(result + " $");
 }
 function tabsInit(item, props) {
     $(item).responsiveTabs(props);
@@ -305,14 +305,14 @@ function initOwlSync(slider, sliderProps, nav, navProps){
 function counter(counters, counter){
     counter.each(function(i, it){
         var item = $(it);
-        item.parent().parent().siblings(".basket__total").children("input").val(item.attr('data-price') * item.val() + " руб.");
+        item.parent().parent().siblings(".basket__total").children("input").val(item.attr('data-price') * item.val() + " $");
     });
 
     counter.on('input', function(){
         $(this).val($(this).val().replace(/[^0-9]/gim,''));
         var item  = $(this),
             total = item.parent().parent().siblings(".basket__total").children("input");
-        total.val(item.attr('data-price') * item.val() + " руб.");
+        total.val(item.attr('data-price') * item.val() + " $");
         totalCount();
     });
 
@@ -329,7 +329,7 @@ function counter(counters, counter){
             }
         }
         input.val(buff);
-        input.parent().parent().siblings(".basket__total").children("input").val(input.attr('data-price') * input.val() + " руб.");
+        input.parent().parent().siblings(".basket__total").children("input").val(input.attr('data-price') * input.val() + " $");
         totalCount();
     });
     $('.basket__pay-way-input').on('input', function() {

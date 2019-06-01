@@ -33,3 +33,10 @@ Route::get('/product/{productId}/busket', 'BusketController@index')->name('buske
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+// for email testing
+// Route::get('/mailable', function () {
+//     return new App\Mail\OrderEmail(
+//     	App\Models\Product::all()->random(7)
+//     );
+// });

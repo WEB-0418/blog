@@ -63271,33 +63271,70 @@ if (token) {
 /*!********************************!*\
   !*** ./resources/js/busket.js ***!
   \********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _productTemplate__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./productTemplate */ "./resources/js/productTemplate.js");
+
+var busketProducts = [];
+
+if (localStorage.busket) {
+  busketProducts = JSON.parse(localStorage.busket);
+}
 
 if ('newProduct' in localStorage && localStorage.newProduct) {
   var newProduct = JSON.parse(localStorage.newProduct);
-  var busketProducts = [];
-
-  if (localStorage.busket) {
-    busketProducts = JSON.parse(localStorage.busket);
-  }
-
   busketProducts.push(newProduct);
   localStorage.busket = JSON.stringify(busketProducts);
+  localStorage.newProduct = '';
+}
+
+if (busketProducts.length) {
   $.ajax({
     url: '/api/product/busket',
     data: {
       products: busketProducts
     },
-    success: function success(data) {
-      console.log(data);
+    success: function success(_ref) {
+      var products = _ref.products;
+      console.log(products);
+      var content = products.map(function (product) {
+        var localProduct = busketProducts.find(function (p) {
+          return p.id === product.id;
+        });
+
+        if (localProduct) {
+          product.count = localProduct.count;
+        }
+
+        return product;
+      }).reduce(function (html, product) {
+        return "".concat(html).concat(Object(_productTemplate__WEBPACK_IMPORTED_MODULE_0__["default"])(product));
+      }, '');
+      console.log(content);
+      $('#products').append(content);
+      $(document).trigger('readyForCounter');
     },
     error: function error() {}
   });
-  localStorage.newProduct = '';
-}
+} // document.querySelector('#createOrder').addEventListener('click', function () {
+// 	$.ajax({
+// 		url: '/api/order',
+// 		data: {
+// 			products: JSON.parse(localStorage.busket),
+// 		},
+// 		success () {
+// 		},
+// 		error () {
+// 		}
+// 	})
+// })
 
-document.querySelector('#createOrder').addEventListener('click', function () {
+
+document.querySelector('.basket__form').addEventListener('submit', function (e) {
+  e.preventDefault();
   $.ajax({
     url: '/api/order',
     data: {
@@ -63587,18 +63624,20 @@ $(document).ready(function () {
 
   filterFade(); //Появление фильтра на адаптиве и манипуляции с ним
 
-  counter($('.basket__counter'), $('.basket__input-counter')); //Счетчик кол-ва товаров в корзине
-
   selectMagic(); //Костыль с выбором цвета в карточке товара
 
   var tabs = {};
   tabsInit($('.single-news__tabs'), tabs); //Инит табов на странице товара
-
-  if ($('.basket__total-input').is('input')) {
-    totalCount(); //Расчет цен в корзине
-  }
+  // if($('.basket__total-input').is('input')){
+  //     totalCount();//Расчет цен в корзине
+  // }
 
   preloader(); //Прелоадер
+});
+$(document).on('readyForCounter', function () {
+  counter($('.basket__counter'), $('.basket__input-counter')); //Счетчик кол-ва товаров в корзине
+
+  totalCount(); //Расчет цен в корзине
 }); // Функции **************************************************************************************************************
 
 function initSlick(item, props) {
@@ -63614,13 +63653,13 @@ function preloader() {
 function totalCount() {
   var arr = Array.from(document.getElementsByClassName('basket__total-input'));
   var delivery = +$('.basket__pay-way-input:checked').attr('data-delCost').replace(/[^0-9]/gim, '');
-  var result = arr.reduce(function (sum, current) {
-    return sum + +$(current).val().replace(/[^0-9]/gim, '');
-  }, 0);
-  $('#goodsTotal').val(result + " руб.");
-  $('#delTotal').val(delivery + " руб.");
+  var result = +arr.reduce(function (sum, current) {
+    return sum + +$(current).val().replace(/[^0-9\.]/gim, '');
+  }, 0).toFixed(2);
+  $('#goodsTotal').val(result + " $");
+  $('#delTotal').val(delivery + " $");
   result += delivery;
-  $('#superTotal').val(result + " руб.");
+  $('#superTotal').val(result + " $");
 }
 
 function tabsInit(item, props) {
@@ -63709,13 +63748,15 @@ function initOwlSync(slider, sliderProps, nav, navProps) {
 function counter(counters, counter) {
   counter.each(function (i, it) {
     var item = $(it);
-    item.parent().parent().siblings(".basket__total").children("input").val(item.attr('data-price') * item.val() + " руб.");
+    item.parent().parent().siblings(".basket__total").children("input").val((item.attr('data-price') * item.val()).toFixed(2) + " $");
   });
   counter.on('input', function () {
     $(this).val($(this).val().replace(/[^0-9]/gim, ''));
     var item = $(this),
         total = item.parent().parent().siblings(".basket__total").children("input");
-    total.val(item.attr('data-price') * item.val() + " руб.");
+    var newVal = (item.attr('data-price') * item.val()).toFixed(2);
+    total.val(newVal + " $");
+    setActualData(input, newVal);
     totalCount();
   });
   counters.on('click', function (e) {
@@ -63733,7 +63774,8 @@ function counter(counters, counter) {
     }
 
     input.val(buff);
-    input.parent().parent().siblings(".basket__total").children("input").val(input.attr('data-price') * input.val() + " руб.");
+    input.parent().parent().siblings(".basket__total").children("input").val((input.attr('data-price') * input.val()).toFixed(2) + " $");
+    setActualData(input, buff);
     totalCount();
   });
   $('.basket__pay-way-input').on('input', function () {
@@ -63959,6 +64001,16 @@ function initRangeSlider(obj, leftInput, rightInput) {
       });
     });
   }
+}
+
+function setActualData($input, count) {
+  var productId = $input.data('productid');
+  var busket = JSON.parse(localStorage.busket);
+  var index = busket.findIndex(function (item) {
+    return item.id === productId;
+  });
+  busket[index].count = count;
+  localStorage.busket = JSON.stringify(busket);
 } // function initMap() {
 //     var geo = new google.maps.Geocoder(),
 //         center,
@@ -64038,9 +64090,26 @@ document.querySelector('#addProduct').addEventListener('click', function () {
   localStorage.newProduct = JSON.stringify({
     color: document.querySelector('.tovar-block__color-item-inner').dataset.color,
     size: document.querySelector('.tovar-block__size').value,
-    id: myData.product
+    id: myData.product,
+    count: 1
   });
 });
+
+/***/ }),
+
+/***/ "./resources/js/productTemplate.js":
+/*!*****************************************!*\
+  !*** ./resources/js/productTemplate.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return getProductHTML; });
+function getProductHTML(product) {
+  return "\n    <div class=\"basket__tovar-item\">\n      <div class=\"basket__tovar-desc\">\n        <div class=\"basket__tovar-img\"><img src=\"".concat(product.thumb, "\">\n          <button class=\"basket__favorite\"></button>\n        </div>\n        <div class=\"basket__desc-text\">\n          <ul class=\"basket__desc-items basket__in-stock\">\n            <li class=\"basket__desc-item\">").concat(product.name, " \u2116 ").concat(product.articule, "</li>\n            <li class=\"basket__desc-item\">\u0426\u0432\u0435\u0442: ").concat(product.color.name, "</li>\n            <li class=\"basket__desc-item\">\u0420\u0430\u0437\u043C\u0435\u0440: ").concat(product.size, "</li>\n          </ul>\n        </div>\n      </div>\n      <div class=\"basket__price\">\n        <div class=\"basket__old-price\">").concat(product.price, "$</div>\n      </div>\n      <div class=\"basket__countblock\">\n        <div class=\"basket__countblock-inner\">\n          <div class=\"basket__counter minus\">-</div>\n          <input class=\"basket__input-counter\" value=\"").concat(product.count, "\" data-price=\"").concat(product.price, "\" data-productId=").concat(product.id, ">\n          <div class=\"basket__counter plus\">+</div>\n        </div>\n      </div>\n      <div class=\"basket__total\">\n        <input class=\"basket__total-input\" value=\"").concat(product.price, "$\" readonly>\n      </div>\n    </div>\n    ");
+}
 
 /***/ }),
 

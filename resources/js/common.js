@@ -192,8 +192,6 @@ $( document ).ready(function() {
 
     filterFade();//Появление фильтра на адаптиве и манипуляции с ним
 
-    counter($('.basket__counter'), $('.basket__input-counter'));//Счетчик кол-ва товаров в корзине
-
     selectMagic();//Костыль с выбором цвета в карточке товара
 
     var tabs = {
@@ -201,12 +199,17 @@ $( document ).ready(function() {
     }
     tabsInit($('.single-news__tabs'), tabs);//Инит табов на странице товара
 
-    if($('.basket__total-input').is('input')){
-        totalCount();//Расчет цен в корзине
-    }
+    // if($('.basket__total-input').is('input')){
+    //     totalCount();//Расчет цен в корзине
+    // }
 
     preloader();//Прелоадер
 });
+
+$(document).on('readyForCounter', () => {
+    counter($('.basket__counter'), $('.basket__input-counter'));//Счетчик кол-ва товаров в корзине
+    totalCount();//Расчет цен в корзине
+})
 
 // Функции **************************************************************************************************************
 
@@ -221,14 +224,15 @@ function preloader () {
 function totalCount () {
     var arr = Array.from(document.getElementsByClassName('basket__total-input'));
     var delivery = +$('.basket__pay-way-input:checked').attr('data-delCost').replace(/[^0-9]/gim,'');
-    var result = arr.reduce(function(sum, current) {
-        return sum + +$(current).val().replace(/[^0-9]/gim,'');
-    }, 0);
-    $('#goodsTotal').val(result + " руб.");
-    $('#delTotal').val(delivery + " руб.");
+    var result = +arr.reduce(function(sum, current) {
+        return sum + +$(current).val().replace(/[^0-9\.]/gim,'');
+    }, 0).toFixed(2);
+    $('#goodsTotal').val(result + " $");
+    $('#delTotal').val(delivery + " $");
     result +=  delivery;
-    $('#superTotal').val(result + " руб.");
+    $('#superTotal').val(result + " $");
 }
+
 function tabsInit(item, props) {
     $(item).responsiveTabs(props);
 }
@@ -308,14 +312,21 @@ function initOwlSync(slider, sliderProps, nav, navProps){
 function counter(counters, counter){
     counter.each(function(i, it){
         var item = $(it);
-        item.parent().parent().siblings(".basket__total").children("input").val(item.attr('data-price') * item.val() + " руб.");
+
+        item.parent().parent()
+            .siblings(".basket__total")
+            .children("input").val(
+                (item.attr('data-price') * item.val()).toFixed(2) + " $"
+            );
     });
 
     counter.on('input', function(){
         $(this).val($(this).val().replace(/[^0-9]/gim,''));
         var item  = $(this),
             total = item.parent().parent().siblings(".basket__total").children("input");
-        total.val(item.attr('data-price') * item.val() + " руб.");
+        const newVal = (item.attr('data-price') * item.val()).toFixed(2);
+        total.val(newVal + " $");
+        setActualData(input, newVal);
         totalCount();
     });
 
@@ -332,7 +343,9 @@ function counter(counters, counter){
             }
         }
         input.val(buff);
-        input.parent().parent().siblings(".basket__total").children("input").val(input.attr('data-price') * input.val() + " руб.");
+        input.parent().parent().siblings(".basket__total").children("input").val(
+            (input.attr('data-price') * input.val()).toFixed(2) + " $");
+        setActualData(input, buff);
         totalCount();
     });
     $('.basket__pay-way-input').on('input', function() {
@@ -547,6 +560,15 @@ function initRangeSlider(obj,leftInput,rightInput){
     }
 }
 
+
+function setActualData($input, count){
+    const productId = $input.data('productid');
+
+    const busket = JSON.parse(localStorage.busket);
+    const index = busket.findIndex(item => item.id === productId);
+    busket[index].count = count;
+    localStorage.busket = JSON.stringify(busket);
+}
 
 // function initMap() {
 //     var geo = new google.maps.Geocoder(),

@@ -67,5 +67,6 @@ document.querySelector('#addProduct').addEventListener('click', function () {
 		color: document.querySelector('.tovar-block__color-item-inner').dataset.color,
 		size: document.querySelector('.tovar-block__size').value,
 		id: myData.product,
+		count: 1
 	});
 })
